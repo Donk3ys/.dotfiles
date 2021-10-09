@@ -1,8 +1,12 @@
 # Android sdk
-export ANDROID_HOME="/Users/donk3y/Library/Android/sdk"
+#export ANDROID_HOME="/Users/donk3y/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Dart
-export PATH="$PATH":"$HOME/.pub-cache/bin"
+#export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# Flutter /Users/donk3y/development/flutter/bin
+export PATH="$HOME/development/flutter/bin:$PATH"
 
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -15,10 +19,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 
-# Sqlite 3
-export PATH="/usr/local/opt/sqlite3/bin:$PATH"
-
-
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
 
@@ -29,10 +29,6 @@ source "$ZDOTDIR/zsh-functions"
 # Theme
 source ~/.config/zsh/themes/gruvbox-material-dark.zsh-theme
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-#source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
-##POWERLEVEL9K_MODE="nerdfont-complete"
-## To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-##[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Plugins
 source ~/.config/zsh/plugins/last-working-dir.zsh
