@@ -14,7 +14,7 @@ call plug#begin("~/.config/nvim/plugged")
 Plug 'nvim-lua/plenary.nvim'
 
 " Buffers
-Plug 'matbme/JABS.nvim'
+Plug 'romgrk/barbar.nvim'
 
 " Comments
 Plug 'gennaro-tedesco/nvim-commaround'
@@ -34,13 +34,10 @@ Plug 'windwp/nvim-autopairs'
 
 " Git
 Plug 'tpope/vim-fugitive'
-"Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
-"Plug 'glepnir/lspsaga.nvim'
-"Plug 'tami5/lspsaga.nvim', {'commit': '373bc031b39730cbfe492533c3acfac36007899a'}
 Plug 'tami5/lspsaga.nvim'
 Plug 'akinsho/flutter-tools.nvim'
 
@@ -57,8 +54,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "" UI
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
-"Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 
 call plug#end()
 
@@ -75,16 +71,16 @@ source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
 
-" Buffer List
-lua require 'jabs'.setup {}
-nnoremap <leader>b :JABSOpen<CR>
+nnoremap <silent> <C-p> :BufferPrevious<CR>
+nnoremap <silent> <C-n> :BufferNext<CR>
+nnoremap <silent> <C-c> :BufferClose<CR>
 
 " Colors
 set termguicolors
 set background=dark
 colorscheme gruvbox-material
 let g:gruvbox_material_background = 'soft'
-let g:airline_theme='transparent'
+" let g:airline_theme='transparent'
 
 
 " Trim Whitespace on save

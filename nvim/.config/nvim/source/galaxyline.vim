@@ -3,7 +3,7 @@ local cmd = vim.cmd
 local fn = vim.fn
 local gl = require("galaxyline")
 local section = gl.section
-gl.short_line_list = {"LuaTree", "packager", "Floaterm", "coc-explorer"}
+gl.short_line_list = {"LuaTree", "packager", "Floaterm"}
 
 
 local nord_colors = {
@@ -90,7 +90,7 @@ section.left[4] = {
   FileIcon = {
     provider = "FileIcon",
     condition = buffer_not_empty,
-    highlight = {require("galaxyline.provider_fileinfo").get_file_icon_color, nord_colors.line_bg}
+    highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, nord_colors.line_bg}
   }
 }
 
