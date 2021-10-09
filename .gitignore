@@ -1,0 +1,9 @@
+plugged/
+
+.zcompdump
+.zsh_history
+.zsh_sessions/
+zsh/cache/
+
+.netrwhist
+.DS_Store

@@ -1,0 +1,342 @@
+# You can edit this file by hand, but it's recommended not to do that.
+
+# Marks:
+'H
+	/Users/donk3y/
+	..
+1591268246
+'b
+	/Users/donk3y/bin/
+	..
+1591268655
+'h
+	/Users/donk3y/
+	..
+1591268655
+'p
+	/Users/donk3y/projects
+	..
+1591273741
+
+# Bookmarks:
+
+# TUI:
+al
+q0
+v2
+ov
+m-1
+l2
+r2
+
+# Left window history (oldest to newest):
+d/Users/donk3y/.config/vifm/scripts
+	..
+0
+d/Library
+	..
+0
+d/opt
+	..
+0
+d/.vol
+	..
+0
+d/Users/donk3y/Pictures
+	..
+0
+d/Users/donk3y/projects
+	dart
+2
+d/Users/donk3y/.config
+	vifm
+6
+d/Users/donk3y/.config/vifm
+	colors
+1
+d/Users/donk3y/.config/vifm/colors
+	Default.vifm
+1
+d/Users/donk3y
+	..
+0
+d/Users
+	donk3y
+2
+d/
+	Applications
+0
+d/Applications
+	Adobe XD
+2
+d/
+	Volumes
+4
+d/Volumes
+	..
+0
+d/
+	cores
+6
+d/cores
+	..
+0
+d/
+	tmp
+15
+d/Users/donk3y
+	Applications
+6
+d/Users/donk3y/Applications
+	..
+0
+d/Users/donk3y
+	.ssh
+4
+d/Users/donk3y/.ssh
+	..
+0
+d/Users/donk3y
+	.pyenv
+4
+d/Users/donk3y/.pyenv
+	..
+0
+d/Users/donk3y
+	.bashrc
+20
+d
+
+# Right window history (oldest to newest):
+D/home
+	..
+0
+D/etc
+	apache2
+1
+D/cores
+	..
+0
+D/home
+	..
+0
+D/usr
+	libexec
+3
+D/Users/donk3y/node_modules
+	..
+0
+D/Users/donk3y/projects/node
+	chatapp
+3
+D/Users/donk3y/projects/mongodb
+	bin
+1
+D/Users/donk3y/Applications
+	Chrome Apps.localized
+1
+D/Users/donk3y/projects
+	..
+0
+D/Users/donk3y
+	..
+0
+D/Users
+	donk3y
+2
+D/
+	bin
+5
+D/bin
+	..
+0
+D/
+	Users
+3
+D/Users
+	donk3y
+2
+D/
+	Applications
+0
+D/Users/donk3y
+	projects
+16
+D/Users/donk3y/projects
+	flutter
+3
+D/Users/donk3y
+	projects
+16
+D/Users
+	donk3y
+2
+D/Users/donk3y
+	projects
+16
+D/Users/donk3y/projects
+	flutter
+3
+D/Users/donk3y
+	projects
+16
+D/Users/donk3y/projects
+	node
+5
+D/Users/donk3y/projects/node
+	socketIO
+4
+D/Users/donk3y/projects
+	node
+5
+D/Users/donk3y/projects/node
+	chatapp
+3
+D/Users/donk3y/projects/node/chatapp
+	node_modules
+1
+D/Users/donk3y/projects/node/chatapp/node_modules
+	base64-arraybuffer
+14
+D/Users/donk3y/projects/node/chatapp/node_modules/base64-arraybuffer
+	lib
+1
+D/Users/donk3y/projects/node/chatapp/node_modules
+	chownr
+34
+D/Users/donk3y
+	.config
+6
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	yabai
+8
+D/Users/donk3y/.config/yabai
+	..
+0
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	yabai
+8
+D/Users/donk3y/.config/yabai
+	..
+0
+D/Users/donk3y/.config
+	skhd
+6
+D/Users/donk3y/.config/skhd
+	..
+0
+D/Users/donk3y/.config
+	yabai
+8
+D/Users/donk3y/.config/yabai
+	..
+0
+D/Users/donk3y/.config
+	..
+0
+D/Users/donk3y
+	.config
+6
+D/Users/donk3y/.config
+	alacritty
+1
+D/Users/donk3y/.config/alacritty
+	..
+0
+D/Users/donk3y/.config
+	alacritty
+1
+D
+
+# Command line history (oldest to newest):
+:mkdir newOne
+:touch NEwFIle 
+:cd ~/projects/node/
+:wo
+:classify
+:windo wincmd H
+:windo wincmd K
+:mkdir skhd
+:mkdir yabai
+:w
+:mkdir alacritty
+
+# Search history (oldest to newest):
+
+# Prompt history (oldest to newest):
+p.skhdrc
+pskhdrc.yml
+pyabairc.yml
+pskhdrc
+pyabairc
+palacritty.yml
+
+# Local filter history (oldest to newest):
+
+# Registers:
+""/Users/donk3y/.local/share/vifm/Trash/000_.DS_Store
+
+# Directory stack (oldest to newest):
+
+# Trash content:
+t/Users/donk3y/.local/share/vifm/Trash/000_newOne
+	/Users/donk3y/newOne
+t/Users/donk3y/.local/share/vifm/Trash/000_NEwFIle
+	/Users/donk3y/NEwFIle
+t/Users/donk3y/.local/share/vifm/Trash/000_.skhdrc
+	/Users/donk3y/.skhdrc
+t/Users/donk3y/.local/share/vifm/Trash/000_.yabairc
+	/Users/donk3y/.yabairc
+t/Users/donk3y/.local/share/vifm/Trash/000_.alacritty.yml
+	/Users/donk3y/.alacritty.yml
+t/Users/donk3y/.local/share/vifm/Trash/000_.zcompdump-Donk3ys-MacBook-Pro-5.7.1
+	/Users/donk3y/.zcompdump-Donk3ys-MacBook-Pro-5.7.1
+t/Users/donk3y/.local/share/vifm/Trash/000_.zcompdump-Donk3ys-MBP-5.7.1
+	/Users/donk3y/.zcompdump-Donk3ys-MBP-5.7.1
+t/Users/donk3y/.local/share/vifm/Trash/000_.zcompdump-Donk3y’s MacBook Pro-5.7.1
+	/Users/donk3y/.zcompdump-Donk3y’s MacBook Pro-5.7.1
+t/Users/donk3y/.local/share/vifm/Trash/000_test.py
+	/Users/donk3y/test.py
+t/Users/donk3y/.local/share/vifm/Trash/000_.DS_Store
+	/Users/donk3y/.DS_Store
+
+# State:
+f
+i1
+[.0
+[F
+F
+I1
+].0
+]F
+s0
