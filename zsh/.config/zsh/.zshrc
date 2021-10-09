@@ -27,8 +27,9 @@ ZSH_DISABLE_COMPFIX=true
 source "$ZDOTDIR/zsh-functions"
 
 # Theme
-source ~/.config/zsh/themes/gruvbox-material-dark.zsh-theme
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+ source ~/.config/zsh/themes/gruvbox-material-dark.zsh-theme
+ source ~/.powerlevel10k/powerlevel10k.zsh-theme
+
 
 # Plugins
 source ~/.config/zsh/plugins/last-working-dir.zsh
@@ -39,7 +40,8 @@ export LSCOLORS=ExGxBxDxCxEgEdxbxgxcxd
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=0'
 
 # Add auto complete for git
-echo 'autoload -Uz compinit && compinit' >> ~/.zshrc && . ~/.zshrc
+autoload -Uz compinit && compinit
+
 
 # Aliases
 alias vi="nvim"
@@ -76,4 +78,3 @@ eval "$(pyenv init -)"
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .git"
-
