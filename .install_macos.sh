@@ -16,7 +16,7 @@ stow -vSt ~ *
 cd ~
 
 # Install packages brew packages
-brew install zsh tmux nvim node fzf fd, yabai, skhd
+brew install zsh tmux nvim node fzf fd yabai skhd xdotool
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k

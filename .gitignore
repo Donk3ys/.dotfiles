@@ -1,4 +1,8 @@
+# Vim P;ugins
 plugged/
+
+# Tmux Plugins
+plugins/
 
 .zcompdump
 .zsh_history
