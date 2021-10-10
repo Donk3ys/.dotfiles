@@ -80,4 +80,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .git"
 
 # Start Tmux and restore last save session
-tmux a; xdotool key ctrl+a ctrl-r
+#tmux a; xdotool key ctrl+a ctrl-r
