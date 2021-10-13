@@ -1,8 +1,8 @@
 # open terminal
-shift + alt - return : open -na /Applications/Alacritty.app
+alt - return : open -na /Applications/Alacritty.app
 
 # close window
- shift + alt - q : yabai -m window --close
+cmd - c : yabai -m window --close
 
 # open web browser
 ctrl + shift - 1 : open -na /Applications/Firefox.app
