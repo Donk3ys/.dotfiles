@@ -2,7 +2,7 @@
 alt - return : open -na /Applications/Alacritty.app
 
 # close window
-cmd - c : yabai -m window --close
+#cmd - c : yabai -m window --close
 
 # open web browser
 ctrl + shift - 1 : open -na /Applications/Firefox.app
