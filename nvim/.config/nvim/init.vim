@@ -24,7 +24,6 @@ Plug 'folke/todo-comments.nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
@@ -58,14 +57,13 @@ Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 
 call plug#end()
 
-
 source $HOME/.config/nvim/source/lspconfig.vim
 source $HOME/.config/nvim/source/lspsaga.vim
 source $HOME/.config/nvim/source/treesitter.vim
 source $HOME/.config/nvim/source/autopairs.vim
 source $HOME/.config/nvim/source/telescope.vim
 source $HOME/.config/nvim/source/fugitive.vim
-source $HOME/.config/nvim/source/lsp-diag.vim
+"source $HOME/.config/nvim/source/diaglist.vim
 source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim

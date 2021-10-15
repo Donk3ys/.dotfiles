@@ -4,58 +4,69 @@ local fmt = string.format
 local kind_presets = {
   default = {
 -- if you change or add symbol here
--- replace corresponding line in readme
-    Text = " (text)",
-    Method = " (method)",
-    Function = " (function)",
-    Constructor = " (constructor)",
-    Field = "ﰠ (field)",
-    Variable = " (variable)",
-    Class = "ﴯ (class)",
-    Interface = " (interface)",
-    Module = " (module)",
-    Property = "ﰠ (property)",
-    Unit = "塞(unit)",
-    Value = " (value)",
-    Enum = " (enum)",
-    Keyword = " (keyword)",
-    Snippet = " (snippet)",
-    Color = " (color)",
-    File = " (file)",
-    Reference = " (reference)",
-    Folder = " (folder)",
-    EnumMember = " (enum member)",
-    Constant = " (const)",
-    Struct = "פּ (sruct)",
-    Event = " (event)",
-    Operator = " (operator)",
-    TypeParameter = ""
+		-- replace corresponding line in readme
+			Text = " (text)",
+			Method = " (method)",
+			Function = " (function)",
+			Constructor = " (constructor)",
+			Field = "ﰠ (field)",
+			Variable = " (variable)",
+			Class = "ﴯ (class)",
+			Interface = " (interface)",
+			Module = " (module)",
+			Property = "ﰠ (property)",
+			Unit = "塞(unit)",
+			Value = " (value)",
+			Enum = " (enum)",
+			Keyword = " (keyword)",
+			Snippet = " (snippet)",
+			Color = " (color)",
+			File = " (file)",
+			Reference = " (reference)",
+			Folder = " (folder)",
+			EnumMember = " (enum member)",
+			Constant = " (const)",
+			Struct = "פּ (sruct)",
+			Event = " (event)",
+			Operator = " (operator)",
+			TypeParameter = ""
   },
-}
+  }
 
 local kind_order = {
   'Text', 'Method', 'Function', 'Constructor', 'Field', 'Variable', 'Class', 'Interface', 'Module',
   'Property', 'Unit', 'Value', 'Enum', 'Keyword', 'Snippet', 'Color', 'File', 'Reference', 'Folder',
   'EnumMember', 'Constant', 'Struct', 'Event', 'Operator', 'TypeParameter'
 }
+local kind_len = 25
 
-function lspkind.init(opts)
-  local with_text = opts == nil or opts['with_text']
+-- default true
+function opt_with_text(opts)
+  return opts == nil or opts['with_text'] == nil or opts['with_text']
+end
 
+-- default 'default'
+function opt_preset(opts)
   local preset
   if opts == nil or opts['preset'] == nil then
     preset = 'default'
   else
     preset = opts['preset']
   end
+  return preset
+end
+
+function lspkind.init(opts)
+  local with_text = opt_with_text(opts)
+  local preset = opt_preset(opts)
 
   local symbol_map = kind_presets[preset]
   local symbol_map = (opts and opts['symbol_map'] and
                        vim.tbl_extend('force', symbol_map, opts['symbol_map'])) or symbol_map
 
   local symbols = {}
-  local len = 25
-  if with_text == true or with_text == nil then
+  local len = kind_len
+  if with_text then
     for i = 1, len do
       local name = kind_order[i]
       local symbol = symbol_map[name]
@@ -75,5 +86,38 @@ function lspkind.init(opts)
 end
 
 lspkind.presets = kind_presets
+
+function lspkind.symbolic(kind, opts)
+  local with_text = opt_with_text(opts)
+  local preset = opt_preset(opts)
+
+  local symbol = kind_presets[preset][kind]
+  if with_text == true then
+    symbol = symbol and (symbol .. ' ') or ''
+    return fmt('%s%s', symbol, kind)
+  else
+    return symbol
+  end
+end
+
+function lspkind.cmp_format(opts)
+  if opts == nil then
+    opts = {}
+  end
+
+  return function(entry, vim_item)
+    vim_item.kind = lspkind.symbolic(vim_item.kind, opts)
+
+    if opts.menu ~= nil then
+      vim_item.menu = opts.menu[entry.source.name]
+    end
+
+    if opts.maxwidth ~= nil then
+        vim_item.abbr = string.sub(vim_item.abbr, 1, opts.maxwidth)
+    end
+
+    return vim_item
+  end
+end
 
 return lspkind

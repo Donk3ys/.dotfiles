@@ -28,10 +28,11 @@ lua <<EOF
     },
 	},
 
-
 	formatting = {
-		format = function(entry, vim_item)
-			vim_item.kind = lspkind.presets.default[vim_item.kind]
+	   format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+
+ 	--	format = function(entry, vim_item)
+	--		vim_item.kind = lspkind.presets.default[vim_item.kind]
 
 		-- add source info
 	  --  vim_item.menu = ({
@@ -42,9 +43,8 @@ lua <<EOF
 		--		latex_symbols = "[Latex]",
 		--	})[entry.source.name]
 
-
-			return vim_item
-		end
+		--	return vim_item
+		--end
 	},
 
 
