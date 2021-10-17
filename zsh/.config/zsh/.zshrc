@@ -73,7 +73,10 @@ eval "$(pyenv init -)"
 
 
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # fzf search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh   # MacOS
+#source /usr/share/fzf/key-bindings.zsh  # Arch
+#source /usr/share/fzf/completion.zsh    # Arch
+
 # Setting fd as the default source for fzf
 # Respect .ignore file
 export FZF_DEFAULT_COMMAND="fd . $HOME"
