@@ -7,9 +7,9 @@ saga.init_lsp_saga {
   hint_sign = "",
   infor_sign = "",
 	code_action_icon = ' ',
-	code_action_prompt = {
-	 enable = false,
-	},
+	--code_action_prompt = {
+	--  enable = false,
+	--},
 }
 EOF
 
@@ -24,7 +24,7 @@ nnoremap <silent> gp <Cmd>Lspsaga preview_definition<CR>
 
 " Code Actions
 nnoremap <silent><leader>ac :Lspsaga code_action<CR>
-vnoremap <silent><leader>ac :<C-U>Lspsaga range_code_action<CR>
+" vnoremap <silent><leader>ac :<C-U>Lspsaga range_code_action<CR>
 
 
 nnoremap <silent> <C-t> :Lspsaga open_floaterm<CR>
