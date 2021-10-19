@@ -31,13 +31,18 @@ Plug 'windwp/nvim-autopairs'
 
 " Debug
 
+" File Explore
+Plug 'tamago324/lir.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
-Plug 'tami5/lspsaga.nvim'
+"Plug 'tami5/lspsaga.nvim', {'branch': 'nvim51'}
 Plug 'akinsho/flutter-tools.nvim'
 
 " Snippets
@@ -45,10 +50,6 @@ Plug 'rafamadriz/friendly-snippets'
 
 " Tree Sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Telescope
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "" UI
 Plug 'sainnhe/gruvbox-material'
@@ -58,16 +59,17 @@ Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 call plug#end()
 
 source $HOME/.config/nvim/source/lspconfig.vim
-source $HOME/.config/nvim/source/lspsaga.vim
+" source $HOME/.config/nvim/source/lspsaga.vim
 source $HOME/.config/nvim/source/treesitter.vim
 source $HOME/.config/nvim/source/autopairs.vim
 source $HOME/.config/nvim/source/telescope.vim
 source $HOME/.config/nvim/source/fugitive.vim
-"source $HOME/.config/nvim/source/diaglist.vim
+" source $HOME/.config/nvim/source/diaglist.vim
 source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
+source $HOME/.config/nvim/source/lir.vim
 
 nnoremap <silent> <C-p> :BufferPrevious<CR>
 nnoremap <silent> <C-n> :BufferNext<CR>
