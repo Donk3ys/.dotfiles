@@ -46,7 +46,7 @@ autoload -Uz compinit && compinit
 # Aliases
 alias vi="nvim"
 #alias vim="nvim"
-alias vim="~/nvim-osx64/bin/nvim"
+alias vim="~/Downloads/nvim-osx64/bin/nvim"
 alias l="ls -l"
 alias la="ls -a -l"
 alias dkr="docker"
