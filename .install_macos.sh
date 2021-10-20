@@ -32,3 +32,6 @@ npm install -g bash-language-server intelephense typescript typescript-language-
 # install flutter
 mkdir ~/development
 git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
+
+# maybe insatll
+# brew install --cask stats
