@@ -32,7 +32,6 @@ Plug 'windwp/nvim-autopairs'
 " Debug
 
 " File Explore
-Plug 'tamago324/lir.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
@@ -69,7 +68,6 @@ source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
-source $HOME/.config/nvim/source/lir.vim
 
 nnoremap <silent> <C-p> :BufferPrevious<CR>
 nnoremap <silent> <C-n> :BufferNext<CR>
