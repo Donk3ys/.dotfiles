@@ -4,6 +4,7 @@ nnoremap <S-p> <cmd>Telescope find_files<cr>
 "nnoremap <S-b> <cmd>Telescope buffers<cr>
 nnoremap <S-l> <cmd>Telescope live_grep<cr>
 nnoremap <S-h> <cmd>Telescope help_tags<cr>
+nnoremap <S-d> <cmd>Telescope lsp_workspace_diagnostics<cr>
 
 nnoremap <leader>fl <cmd>Telescope flutter commands<cr>
 
