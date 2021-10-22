@@ -1,5 +1,4 @@
 # Android sdk
-#export ANDROID_HOME="/Users/donk3y/Library/Android/sdk"
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 # Dart
