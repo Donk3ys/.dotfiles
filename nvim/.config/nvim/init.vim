@@ -63,15 +63,11 @@ source $HOME/.config/nvim/source/treesitter.vim
 source $HOME/.config/nvim/source/autopairs.vim
 source $HOME/.config/nvim/source/telescope.vim
 source $HOME/.config/nvim/source/fugitive.vim
-" source $HOME/.config/nvim/source/diaglist.vim
 source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
 
-nnoremap <silent> <C-p> :BufferPrevious<CR>
-nnoremap <silent> <C-n> :BufferNext<CR>
-nnoremap <silent> <C-c> :BufferClose<CR>
 
 " Colors
 set termguicolors

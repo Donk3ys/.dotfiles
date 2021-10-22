@@ -2,6 +2,11 @@
 nnoremap <SPACE> <Nop>
 let mapleader=" "
 
+" Buffers
+nnoremap <silent> <C-p> :BufferPrevious<CR>
+nnoremap <silent> <C-n> :BufferNext<CR>
+nnoremap <silent> <C-c> :BufferClose<CR>
+
 " Use alt + hjkl to resize windows
 "nnoremap <M-j>    :resize -2<CR>
 "nnoremap <M-k>    :resize +2<CR>
