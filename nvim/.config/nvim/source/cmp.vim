@@ -48,9 +48,10 @@ lua <<EOF
 	},
 
 
-	--experimental = {
+	experimental = {
+		native_menu = false,
 	--	ghost_text = true,
-	--},
+	},
 
 	sources = {
 		{ name = 'nvim_lsp' },
