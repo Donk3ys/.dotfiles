@@ -16,7 +16,7 @@ stow -vSt ~ *
 cd ~
 
 # Install packages brew packages
-brew install zsh tmux nvim node fzf fd yabai skhd
+brew install alacritty zsh tmux nvim node fzf fd yabai skhd
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
@@ -32,6 +32,7 @@ npm install -g bash-language-server intelephense typescript typescript-language-
 # install flutter
 mkdir ~/development
 git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
+flutter precache
 
 # maybe insatll
 # brew install --cask stats

@@ -1,5 +1,6 @@
 # Android sdk
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+#export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
 
 # Dart
 #export PATH="$PATH":"$HOME/.pub-cache/bin"
