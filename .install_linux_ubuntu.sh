@@ -2,7 +2,7 @@
 
 # Run
 # sudo chmod +x ~/.install.sh
-# sudo bash ~/install.sh
+# bash ~/install.sh
 
 cd ~
 
@@ -41,12 +41,13 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install lsp servers for nvim lsp-config
-npm install -g bash-language-server intelephense typescript typescript-language-server
+sudo npm install -g bash-language-server intelephense typescript typescript-language-server
 
 # Install flutter
 mkdir ~/development
 git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
 flutter precache
+flutter doctor --android-licenses
 
 # Get android studio setup for sdk
 # Install JDK
@@ -56,9 +57,8 @@ sudo apt install openjdk-16-jdk-headless -y
 # Download & insatll Android Studio
 sudo dpkg --add-architecture i386
 sudo apt update -y
-sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
 wget "https://dl.google.com/dl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.25-linux.tar.gz" -P ~/Downloads
-#sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
 sudo tar -xvzf ~/Downloads/android-studio-2020.3.1.25-linux.tar.gz -C /opt/
 ## mkdir -p "$HOME"/.local/share/applications
 ## cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
@@ -74,7 +74,7 @@ sudo tar -xvzf ~/Downloads/android-studio-2020.3.1.25-linux.tar.gz -C /opt/
 ## 	StartupWMClass=android-studio
 ## EOF
 
-#Install nerd-fonts
+# Install nerd-fonts
 # download from website nerdfonts.com
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -P ~/Downloads
 cd /usr/share/fonts/
