@@ -1,5 +1,5 @@
 # Android sdk
-export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
 #export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
 
 # Dart
@@ -9,7 +9,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # Go
-export PATH="$PATH:$(go env GOPATH)/bin"
+# export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Java
 #export JAVA_HOME=$(/usr/libexec/java_home)
@@ -18,6 +18,8 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
+# ### points python to pyenv installed python version
+# eval "$(pyenv init -)"
 
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
@@ -44,14 +46,15 @@ autoload -Uz compinit && compinit
 
 
 # Aliases
-alias vi="nvim"
 #alias vim="nvim"
-alias vim="~/Downloads/nvim-osx64/bin/nvim"
+alias vim="~/Downloads/nvim-osx64/bin/nvim" # MacOS
+#alias vim="~/Downloads/nvim.appimage" # linux
 alias l="ls -l"
 alias la="ls -a -l"
 alias dkr="docker"
 alias dc="docker-compose"
 alias cwd="pwd"
+alias studio="/opt/android-studio/bin/studio.sh" # ubuntu android studio
 
 
 #### Speeds up paste time
@@ -68,8 +71,6 @@ zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
 
-### points python to pyenv installed python version
-eval "$(pyenv init -)"
 
 
 # FZF

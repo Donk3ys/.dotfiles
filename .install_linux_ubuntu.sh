@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Run
-# sudo chmod +x ~/.install_linux_ubuntu.sh
-# sudo bash ~/.install_linux_ubuntu.sh
+# sudo chmod +x ~/.install.sh
+# sudo bash ~/install.sh
 
 cd ~
 
@@ -10,14 +10,18 @@ cd ~
 sudo apt update -y && sudo apt upgrade -y
 
 # Install git & stow then clone .dotfiles & stow files
-sudo apt insatll git stow -y
+sudo apt install git stow -y
 git clone https://github.com/Donk3ys/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/
 stow -vSt ~ alacritty nvim zsh
 cd ~
 
 # Install packages brew packages
-sudo apt install zsh zsh-completions tmux nvim node fzf fd alacritty curl -y
+sudo apt install zsh tmux fzf curl nodejs npm fd-find -y
+
+# Get neovim from source
+wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -P ~/Downloads
+chmod u+x ~/Downloads/nvim.appimage && ~/Donwnloads/nvim.appimage
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
@@ -46,35 +50,44 @@ flutter precache
 
 # Get android studio setup for sdk
 # Install JDK
-sudo apt install openjdk-8-jdk-headless openjdk-11-jdk-headless openjdk-16-jdk-headless -y
+#sudo apt install openjdk-8-jdk-headless openjdk-11-jdk-headless openjdk-16-jdk-headless -y
+sudo apt install openjdk-16-jdk-headless -y
 
 # Download & insatll Android Studio
-wget "https://dl.google.com/dl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.25-linux.tar.gz"
+sudo dpkg --add-architecture i386
+sudo apt update -y
+sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
+wget "https://dl.google.com/dl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.25-linux.tar.gz" -P ~/Downloads
 #sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
-sudo tar -xvzf android-studio-2020.3.1.25-linux.tar.gz -C /opt/
-mkdir -p "$HOME"/.local/share/applications
-cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
-	[Desktop Entry]
-	Version=3.1.3
-	Type=Application
-	Name=Android Studio
-	Exec="/opt/android-studio/bin/studio.sh" %f
-	Icon=/opt/android-studio/bin/studio.png
-	Categories=Development;IDE;
-	Terminal=false
-	StartupNotify=true
-	StartupWMClass=android-studio
-EOF
+sudo tar -xvzf ~/Downloads/android-studio-2020.3.1.25-linux.tar.gz -C /opt/
+## mkdir -p "$HOME"/.local/share/applications
+## cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
+## 	[Desktop Entry]
+## 	Version=2020.3.1.25
+## 	Type=Application
+## 	Name=Android Studio
+## 	Exec="/opt/android-studio/bin/studio.sh" %f
+## 	Icon=/opt/android-studio/bin/studio.png
+## 	Categories=Development;IDE;
+## 	Terminal=false
+## 	StartupNotify=true
+## 	StartupWMClass=android-studio
+## EOF
 
 #Install nerd-fonts
 # download from website nerdfonts.com
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -P ~/Downloads
 cd /usr/share/fonts/
 sudo mkdir nerd-fonts
 cd nerd-fonts
 sudo cp ~/Downloads/Meslo.zip /usr/share/fonts/nerd-fonts
 sudo unzip Meslo.zip
+sudo rm Meslo.zip
 fc-cache -vf
 #Reboot
 fc-match Meslo -a
 
 echo "Installing Finished"
+
+# Run to start android studio for first time
+sudo /opt/android-studio/bin/studio.sh
