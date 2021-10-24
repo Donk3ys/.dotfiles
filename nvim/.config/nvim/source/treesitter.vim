@@ -18,6 +18,7 @@ require'nvim-treesitter.configs'.setup {
     "json",
     "php",
     "rust",
+		"svelte",
     "toml",
     "yaml",
   },

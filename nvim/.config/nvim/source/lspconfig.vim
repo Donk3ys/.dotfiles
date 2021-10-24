@@ -93,9 +93,9 @@ require'lspconfig'.intelephense.setup{
   on_attach = on_attach,
 }
 
--- nvim_lsp.intelephense.setup{
---   on_attach = on_attach,
---}
+require'lspconfig'.svelte.setup{
+  on_attach = on_attach,
+}
 
 require'lspconfig'.tsserver.setup{
 	on_attach = on_attach,
