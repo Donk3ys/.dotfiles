@@ -27,7 +27,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install lsp servers for nvim lsp-config
-npm install -g bash-language-server intelephense typescript typescript-language-server
+npm install -g bash-language-server intelephense typescript typescript-language-server svelte-language-server
 
 # install flutter
 mkdir ~/development
