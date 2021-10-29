@@ -1,4 +1,4 @@
-# Vim P;ugins
+# Vim Plugins
 plugged/
 
 # Tmux Plugins
@@ -8,6 +8,9 @@ plugins/
 .zsh_history
 .zsh_sessions/
 zsh/cache/
+
+# vifm
+vifminfo.json
 
 .netrwhist
 .DS_Store
