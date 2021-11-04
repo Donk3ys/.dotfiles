@@ -16,8 +16,10 @@ lua <<EOF
 	mapping = {
 --     ['<C-p>'] = cmp.mapping.select_prev_item(),
 --     ['<C-n>'] = cmp.mapping.select_next_item(),
-  	['<S-TAB>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
-		['<TAB>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+     ['<S-TAB>'] = cmp.mapping.select_prev_item(),
+     ['<TAB>'] = cmp.mapping.select_next_item(),
+--   	['<S-TAB>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+-- 		['<TAB>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
