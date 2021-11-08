@@ -13,7 +13,7 @@ sudo apt update -y && sudo apt upgrade -y
 sudo apt install git stow -y
 git clone https://github.com/Donk3ys/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/
-stow -vSt ~ alacritty nvim zsh
+stow -vSt ~ alacritty nvim zsh tmux
 cd ~
 
 # Install packages brew packages
