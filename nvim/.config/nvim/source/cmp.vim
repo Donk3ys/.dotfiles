@@ -10,6 +10,7 @@ lua <<EOF
     snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
+			vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
 
@@ -58,6 +59,7 @@ lua <<EOF
 	sources = {
 		{ name = 'nvim_lsp' },
 		{ name = 'vsnip' },
+		{ name = 'ultisnips' },
 		{ name = 'buffer' },
 		{ name = 'path' },
 	}

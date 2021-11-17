@@ -45,6 +45,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'akinsho/flutter-tools.nvim'
 
 " Snippets
+Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'rafamadriz/friendly-snippets'
 
 " Tree Sitter
