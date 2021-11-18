@@ -9,10 +9,11 @@ lua <<EOF
   cmp.setup({
     snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-			vim.fn["UltiSnips#Anon"](args.body)
+      -- vim.fn["vsnip#anonymous"](args.body)
+			require'luasnip'.lsp_expand(args.body)
     end,
   },
+
 
 	mapping = {
 --     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -50,7 +51,6 @@ lua <<EOF
 		--end
 	},
 
-
 	experimental = {
 		native_menu = false,
 	--	ghost_text = true,
@@ -58,12 +58,15 @@ lua <<EOF
 
 	sources = {
 		{ name = 'nvim_lsp' },
-		{ name = 'vsnip' },
-		{ name = 'ultisnips' },
+		-- { name = 'vsnip' },
+		{ name = 'luasnip' },
 		{ name = 'buffer' },
 		{ name = 'path' },
-	}
+	},
+
 })
 
+require'luasnip'.filetype_extend("dart", {"flutter"})
+require("luasnip/loaders/from_vscode").lazy_load()
 
 EOF
