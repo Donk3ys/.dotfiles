@@ -44,8 +44,10 @@ Plug 'airblade/vim-gitgutter'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
-"Plug 'tami5/lspsaga.nvim', {'branch': 'nvim51'}
 Plug 'akinsho/flutter-tools.nvim'
+
+" Terminal
+Plug 'akinsho/toggleterm.nvim'
 
 " Tree Sitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -68,6 +70,11 @@ source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
 
+lua <<EOF
+require"toggleterm".setup{
+  open_mapping = [[<c-\>]],
+}
+EOF
 
 " Colors
 set termguicolors
