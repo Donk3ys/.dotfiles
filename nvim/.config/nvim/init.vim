@@ -73,6 +73,7 @@ source $HOME/.config/nvim/source/todo-comments.vim
 lua <<EOF
 require"toggleterm".setup{
   open_mapping = [[<c-\>]],
+	size = 30,
 }
 EOF
 
