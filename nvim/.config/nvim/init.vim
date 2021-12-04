@@ -17,7 +17,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'romgrk/barbar.nvim'
 
 " Comments
-Plug 'gennaro-tedesco/nvim-commaround'
+Plug 'numToStr/Comment.nvim'
 Plug 'folke/todo-comments.nvim'
 
 " Auto Complete
@@ -60,14 +60,12 @@ Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 call plug#end()
 
 source $HOME/.config/nvim/source/lspconfig.vim
-" source $HOME/.config/nvim/source/lspsaga.vim
 source $HOME/.config/nvim/source/treesitter.vim
 source $HOME/.config/nvim/source/autopairs.vim
 source $HOME/.config/nvim/source/telescope.vim
 source $HOME/.config/nvim/source/fugitive.vim
 source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
-source $HOME/.config/nvim/source/commaround.vim
 source $HOME/.config/nvim/source/todo-comments.vim
 
 lua <<EOF
@@ -75,6 +73,8 @@ require"toggleterm".setup{
   open_mapping = [[<c-\>]],
 	size = 30,
 }
+
+require'Comment'.setup()
 EOF
 
 " Colors
