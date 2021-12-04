@@ -18,6 +18,7 @@ Plug 'romgrk/barbar.nvim'
 
 " Comments
 Plug 'numToStr/Comment.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 Plug 'folke/todo-comments.nvim'
 
 " Auto Complete
@@ -75,6 +76,11 @@ require"toggleterm".setup{
 }
 
 require'Comment'.setup()
+require'nvim-treesitter.configs'.setup {
+  context_commentstring = {
+    enable = true
+  }
+}
 EOF
 
 " Colors
