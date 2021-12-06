@@ -76,6 +76,10 @@ require"toggleterm".setup{
 }
 
 require'Comment'.setup()
+local ft = require('Comment.ft')
+ft.dart = {'//%s', '/*%s*/'}
+
+--Comment context
 require'nvim-treesitter.configs'.setup {
   context_commentstring = {
     enable = true
