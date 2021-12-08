@@ -1,6 +1,7 @@
 # Android sdk
 export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
 #export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
+export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 
 # Dart
 #export PATH="$PATH":"$HOME/.pub-cache/bin"
