@@ -34,6 +34,8 @@ Plug 'rafamadriz/friendly-snippets'
 Plug 'windwp/nvim-autopairs'
 
 " Debug
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 
 " File Explore
 Plug 'nvim-telescope/telescope.nvim'
@@ -68,6 +70,7 @@ source $HOME/.config/nvim/source/fugitive.vim
 source $HOME/.config/nvim/source/cmp.vim
 source $HOME/.config/nvim/source/galaxyline.vim
 source $HOME/.config/nvim/source/todo-comments.vim
+source $HOME/.config/nvim/source/dap.vim
 
 lua <<EOF
 require"toggleterm".setup{
