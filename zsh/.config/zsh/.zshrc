@@ -22,6 +22,9 @@ eval "$(pyenv init --path)"
 # ### points python to pyenv installed python version
 # eval "$(pyenv init -)"
 
+# Rust
+. "$HOME/.cargo/env"
+
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
 
