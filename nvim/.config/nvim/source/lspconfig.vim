@@ -103,6 +103,11 @@ require'lspconfig'.intelephense.setup{
   on_attach = on_attach,
 }
 
+require'lspconfig'.rust_analyzer.setup{
+  on_attach = on_attach,
+}
+require('rust-tools').setup({})
+
 require'lspconfig'.svelte.setup{
   on_attach = on_attach,
 }

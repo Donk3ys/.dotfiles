@@ -49,6 +49,7 @@ Plug 'airblade/vim-gitgutter'
 " lsp
 Plug 'neovim/nvim-lspconfig'
 Plug 'akinsho/flutter-tools.nvim'
+Plug 'simrat39/rust-tools.nvim'
 
 " Terminal
 Plug 'akinsho/toggleterm.nvim'
