@@ -36,6 +36,7 @@ Plug 'windwp/nvim-autopairs'
 " Debug
 Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
 " File Explore
 Plug 'nvim-telescope/telescope.nvim'
