@@ -103,10 +103,25 @@ require'lspconfig'.intelephense.setup{
   on_attach = on_attach,
 }
 
-require'lspconfig'.rust_analyzer.setup{
-  on_attach = on_attach,
+-- require'lspconfig'.rust_analyzer.setup{
+--  on_attach = on_attach,
+-- }
+require('rust-tools').setup{
+    tools = {
+        autoSetHints = true,
+        hover_with_actions = true,
+        inlay_hints = {
+            show_parameter_hints = false,
+            parameter_hints_prefix = "",
+            other_hints_prefix = "",
+        },
+    },
+
+    server = {
+        on_attach = on_attach,
+    }
 }
-require('rust-tools').setup({})
+
 
 require'lspconfig'.svelte.setup{
   on_attach = on_attach,
