@@ -31,4 +31,4 @@ vnoremap < <gv
 vnoremap > >gv
 
 " Set fold method to indent
-nmap za :set foldmethod=expr<CR>
+nmap za :set foldmethod=expr foldlevelstart=1 foldnestmax=1<CR>

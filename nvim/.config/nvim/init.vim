@@ -61,6 +61,9 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
+Plug 'petertriho/nvim-scrollbar'
+Plug 'anuvyklack/pretty-fold.nvim'
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 call plug#end()
 
@@ -90,7 +93,18 @@ require'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
+
+require("scrollbar").setup()
+
+require('pretty-fold').setup()
+require('pretty-fold.preview').setup_keybinding('h')
+
+require("lsp_lines").register_lsp_virtual_lines()
 EOF
+" vim.diagnostic.config({
+"   virtual_text = false,
+" })
+
 
 " Colors
 set termguicolors
