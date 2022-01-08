@@ -90,9 +90,9 @@ require("flutter-tools").setup {
   dev_log = {
     enabled = false,
   },
-	widget_guides = {
-		enabled = true,
-	},
+	-- widget_guides = {
+	-- 	enabled = true,
+	-- },
 }
 
 require'lspconfig'.bashls.setup{
