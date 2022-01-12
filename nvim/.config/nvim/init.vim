@@ -41,6 +41,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 " File Explore
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
