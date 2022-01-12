@@ -85,10 +85,10 @@ require("flutter-tools").setup {
 	},
   debugger = {
     enabled = true,
-    run_via_dap = true,
+    run_via_dap = false,
   },
   dev_log = {
-    enabled = false,
+    enabled = true,
   },
 	-- widget_guides = {
 	-- 	enabled = true,
