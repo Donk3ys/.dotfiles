@@ -59,6 +59,9 @@ alias dkr="docker"
 alias dc="docker-compose"
 alias cwd="pwd"
 alias studio="/opt/android-studio/bin/studio.sh" # ubuntu android studio
+alias pub="flutter pub"
+alias pubo="flutter pub outdated"
+alias pubu="flutter pub upgrade"
 
 
 #### Speeds up paste time
@@ -90,3 +93,7 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .
 
 # Start Tmux and restore last save session
 #tmux a; xdotool key ctrl+a ctrl-r
+
+# Set nvim as defualt editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"

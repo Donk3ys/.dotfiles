@@ -63,20 +63,19 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 Plug 'petertriho/nvim-scrollbar'
-Plug 'anuvyklack/pretty-fold.nvim'
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 call plug#end()
 
-source $HOME/.config/nvim/source/lspconfig.vim
-source $HOME/.config/nvim/source/treesitter.vim
-source $HOME/.config/nvim/source/autopairs.vim
-source $HOME/.config/nvim/source/telescope.vim
-source $HOME/.config/nvim/source/fugitive.vim
-source $HOME/.config/nvim/source/cmp.vim
-source $HOME/.config/nvim/source/galaxyline.vim
-source $HOME/.config/nvim/source/todo-comments.vim
-source $HOME/.config/nvim/source/dap.vim
+source $HOME/.config/nvim/after/plugins/lspconfig.vim
+source $HOME/.config/nvim/after/plugins/treesitter.vim
+source $HOME/.config/nvim/after/plugins/autopairs.vim
+source $HOME/.config/nvim/after/plugins/telescope.vim
+source $HOME/.config/nvim/after/plugins/fugitive.vim
+source $HOME/.config/nvim/after/plugins/cmp.vim
+source $HOME/.config/nvim/after/plugins/galaxyline.vim
+source $HOME/.config/nvim/after/plugins/todo-comments.vim
+source $HOME/.config/nvim/after/plugins/dap.vim
 
 lua <<EOF
 require"toggleterm".setup{
@@ -97,14 +96,8 @@ require'nvim-treesitter.configs'.setup {
 
 require("scrollbar").setup()
 
-require('pretty-fold').setup()
-require('pretty-fold.preview').setup_keybinding('h')
-
 require("lsp_lines").register_lsp_virtual_lines()
 EOF
-" vim.diagnostic.config({
-"   virtual_text = false,
-" })
 
 
 " Colors
