@@ -3,11 +3,6 @@
 "
 """""""""""""""""""""""""""""""""""""""""
 
-" Import General Settings & Key Maps
-source $HOME/.config/nvim/sets.vim
-source $HOME/.config/nvim/maps.vim
-
-
 " Plugins
 call plug#begin("~/.config/nvim/plugged")
 " All
@@ -67,17 +62,22 @@ Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 call plug#end()
 
-source $HOME/.config/nvim/after/plugins/lspconfig.vim
-source $HOME/.config/nvim/after/plugins/treesitter.vim
-source $HOME/.config/nvim/after/plugins/autopairs.vim
-source $HOME/.config/nvim/after/plugins/telescope.vim
-source $HOME/.config/nvim/after/plugins/fugitive.vim
-source $HOME/.config/nvim/after/plugins/cmp.vim
-source $HOME/.config/nvim/after/plugins/galaxyline.vim
-source $HOME/.config/nvim/after/plugins/todo-comments.vim
-source $HOME/.config/nvim/after/plugins/dap.vim
+" Import General Settings & Key Maps
+source $HOME/.config/nvim/sets.vim
+source $HOME/.config/nvim/maps.vim
+
+source $HOME/.config/nvim/after/lspconfig.vim
+source $HOME/.config/nvim/after/treesitter.vim
+source $HOME/.config/nvim/after/autopairs.vim
+source $HOME/.config/nvim/after/telescope.vim
+source $HOME/.config/nvim/after/fugitive.vim
+source $HOME/.config/nvim/after/cmp.vim
+source $HOME/.config/nvim/after/galaxyline.vim
+source $HOME/.config/nvim/after/dap.vim
 
 lua <<EOF
+require("todo-comments").setup {}
+
 require"toggleterm".setup{
   open_mapping = [[<c-\>]],
 	size = 30,
