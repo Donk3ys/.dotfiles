@@ -19,10 +19,10 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts) -- lspSaga
   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts) -- lspSaga
+  buf_set_keymap('n', '<C-j>', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts) -- lspSaga
 
   -- formatting on save
   if client.resolved_capabilities.document_formatting then
@@ -33,46 +33,17 @@ local on_attach = function(client, bufnr)
   end
 
 
-	-- Open definition in seperate window
-	local function goto_definition(split_cmd)
-		local util = vim.lsp.util
-		local log = require("vim.lsp.log")
-		local api = vim.api
-
-		local handler = function(_, method, result)
-			if result == nil or vim.tbl_isempty(result) then
-				local _ = log.info() and log.info(method, "No location found")
-				return nil
-			end
-
-			if split_cmd then
-				vim.cmd(split_cmd)
-			end
-
-			if vim.tbl_islist(result) then
-				util.jump_to_location(result[1])
-
-				if #result > 1 then
-					util.set_qflist(util.locations_to_items(result))
-					api.nvim_command("copen")
-					api.nvim_command("wincmd p")
-				end
-			else
-				util.jump_to_location(result)
-			end
-		end
-
-		return handler
-	end
-	vim.lsp.handlers["textDocument/definition"] = goto_definition('split')
-
 end
-
 
 --Add fluter tools
 require("flutter-tools").setup {
 	lsp = {
 		on_attach = on_attach,
+		    color = { -- show the derived colours for dart variables
+      enabled = true, -- whether or not to highlight color variables at all, only supported on flutter >= 2.10
+      virtual_text = true, -- show the highlight using virtual text
+      virtual_text_str = "■", -- the virtual text character to highlight
+    },
 	},
   debugger = {
     enabled = true,

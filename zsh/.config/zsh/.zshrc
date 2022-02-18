@@ -4,7 +4,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
 export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 
 # Dart
-#export PATH="$PATH":"$HOME/.pub-cache/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Flutter /Users/donk3y/development/flutter/bin
 export PATH="$HOME/development/flutter/bin:$PATH"
@@ -50,8 +50,8 @@ autoload -Uz compinit && compinit
 
 
 # Aliases
-#alias vim="nvim"
-alias vim="~/Downloads/nvim-osx64/bin/nvim" # MacOS
+alias vim="nvim"
+#alias vim="~/Downloads/nvim-osx64/bin/nvim" # MacOS
 #alias vim="~/Downloads/nvim.appimage" # linux
 alias l="ls -l"
 alias la="ls -a -l"

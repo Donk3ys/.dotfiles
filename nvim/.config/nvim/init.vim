@@ -58,7 +58,7 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 Plug 'petertriho/nvim-scrollbar'
-Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+Plug 'j-hui/fidget.nvim'
 
 call plug#end()
 
@@ -96,7 +96,11 @@ require'nvim-treesitter.configs'.setup {
 
 require("scrollbar").setup()
 
-require("lsp_lines").register_lsp_virtual_lines()
+require"fidget".setup{
+text = {
+    spinner = "dots_snake",
+  },
+}
 EOF
 
 
@@ -104,7 +108,7 @@ EOF
 set termguicolors
 set background=dark
 colorscheme gruvbox-material
-let g:gruvbox_material_background = 'soft'
+" let g:gruvbox_material_background = 'hard'
 " let g:airline_theme='transparent'
 
 
