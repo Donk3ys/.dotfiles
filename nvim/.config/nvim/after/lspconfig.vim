@@ -61,6 +61,10 @@ require'lspconfig'.bashls.setup{
   on_attach = on_attach,
 }
 
+require'lspconfig'.gopls.setup{
+  on_attach = on_attach,
+}
+
 require'lspconfig'.intelephense.setup{
   on_attach = on_attach,
 }

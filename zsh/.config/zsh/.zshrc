@@ -10,7 +10,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # Go
-# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Java
 #export JAVA_HOME=$(/usr/libexec/java_home)
