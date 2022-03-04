@@ -32,7 +32,7 @@ require('telescope').setup{
     layout_strategy = "vertical",
   }
 }
-require('telescope').load_extension('fzf')
+--require('telescope').load_extension('fzf')
 require("telescope").load_extension("flutter")
 require("telescope").load_extension "file_browser"
 local fb_actions = require "telescope".extensions.file_browser.actions

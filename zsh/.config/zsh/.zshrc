@@ -1,6 +1,6 @@
 # Android sdk
-export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
-#export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
+#export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
+export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
 export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 
 # Dart
@@ -10,20 +10,20 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # Go
-export PATH="$PATH:$(go env GOPATH)/bin"
+# export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Java
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init --path)"
 # ### points python to pyenv installed python version
 # eval "$(pyenv init -)"
 
 # Rust
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
@@ -63,6 +63,9 @@ alias pub="flutter pub"
 alias pubo="flutter pub outdated"
 alias pubu="flutter pub upgrade"
 
+alias zshrc="~/.dotfiles/zsh/.config/zsh/.zshrc"
+alias vimi="~/.dotfiles/nvim/.config/nvim/"
+
 
 #### Speeds up paste time
 pasteinit() {
@@ -77,13 +80,10 @@ pastefinish() {
 zstyle :bracketed-paste-magic paste-init pasteinit
 zstyle :bracketed-paste-magic paste-finish pastefinish
 
-
-
-
 # FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh   # MacOS
-#source /usr/share/fzf/key-bindings.zsh  # Arch
-#source /usr/share/fzf/completion.zsh    # Arch
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh   # MacOS
+source /usr/share/fzf/key-bindings.zsh  # Arch
+source /usr/share/fzf/completion.zsh    # Arch
 
 # Setting fd as the default source for fzf
 # Respect .ignore file
