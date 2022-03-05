@@ -1,6 +1,6 @@
 # Android sdk
 #export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
-export ANDROID_HOME="$HOME/Android/Sdk" # ubuntu
+export ANDROID_HOME="$HOME/Android/Sdk" # linux
 export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 
 # Dart
@@ -10,7 +10,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/development/flutter/bin:$PATH"
 
 # Go
-# export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # Java
 #export JAVA_HOME=$(/usr/libexec/java_home)

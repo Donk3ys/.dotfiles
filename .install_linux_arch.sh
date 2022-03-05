@@ -24,7 +24,10 @@ rogauracore brightness 2
 	# !/bin/bash
 	# rogauracore red
 	# rogauracore brightness 2
-
+# install light for screen brightness
+sudo pacman -S light
+sudo usermod -a G video donk3y
+# Must reboot to take effect
 
 # Install git & stow then clone .dotfiles & stow files
 sudo pacman -S git stow --noconfirm
@@ -34,8 +37,7 @@ stow -vSt ~ alacritty nvim zsh tmux
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux nvim nodejs npm fzf fd alacritty --noconfirm
-
+sudo pacman -S zsh zsh-completions tmux nvim nodejs npm fzf fd alacritty go --noconfirm
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
@@ -55,7 +57,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install lsp servers for nvim lsp-config
-sudo npm install -g bash-language-server intelephense typescript typescript-language-server
+sudo npm install -g bash-language-server intelephense typescript typescript-language-server gopls
 
 
 # Install flutter
