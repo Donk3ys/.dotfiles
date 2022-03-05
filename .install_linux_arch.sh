@@ -24,6 +24,8 @@ rogauracore brightness 2
 	# !/bin/bash
 	# rogauracore red
 	# rogauracore brightness 2
+	# Set mouse sensitivity
+	# xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matrix" 0.3 0 0 0 0.3 0 0 0 1
 # install light for screen brightness
 sudo pacman -S light
 sudo usermod -a G video donk3y
@@ -38,6 +40,11 @@ cd ~
 
 # Install packages
 sudo pacman -S zsh zsh-completions tmux nvim nodejs npm fzf fd alacritty go --noconfirm
+
+# Add tmux packages
+mkdir ~/.dotfiles/tmux/.config/tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.dotfiles/tmux/.config/tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tmux-resurrect ~/.dotfiles/tmux/.config/tmux/plugins/tmux-resurrect
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
