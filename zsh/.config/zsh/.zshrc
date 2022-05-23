@@ -3,6 +3,9 @@
 export ANDROID_HOME="$HOME/Android/Sdk" # linux
 export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 
+# Chrome Linux
+export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
+
 # Dart
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 

@@ -39,7 +39,7 @@ stow -vSt ~ alacritty nvim zsh tmux
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux nvim nodejs npm fzf fd alacritty go --noconfirm
+sudo pacman -S zsh zsh-completions tmux nvim nodejs npm fzf fd ripgrep alacritty go --noconfirm
 
 # Add tmux packages
 mkdir ~/.dotfiles/tmux/.config/tmux/plugins
@@ -64,8 +64,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Install lsp servers for nvim lsp-config
-sudo npm install -g bash-language-server intelephense typescript typescript-language-server gopls
-
+sudo npm install -g bash-language-server diagnostic-languageserver intelephense typescript typescript-language-server
 
 # Install flutter
 mkdir ~/development

@@ -35,6 +35,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 
 " File Explore
 Plug 'nvim-telescope/telescope.nvim'
+" Plug 'nvim-telescope/telescope.nvim', { 'commit': '2b8c7b1ec7a3b27f1d24478c404ce4b2a82cc055' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
