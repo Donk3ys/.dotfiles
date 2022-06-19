@@ -47,14 +47,14 @@ filetype plugin on
 " delays and poor user experience.
 set updatetime=50
 
-" " Better code folding
-function! MyFoldText()
-    let line = getline(v:foldstart)
-    let foldedlinecount = v:foldend - v:foldstart + 1
-    return ' ﬌ '. foldedlinecount . line
-endfunction
-set foldtext=MyFoldText()
-set fillchars=fold:\
+" " " Better code folding
+" function! MyFoldText()
+"     let line = getline(v:foldstart)
+"     let foldedlinecount = v:foldend - v:foldstart + 1
+"     return ' ﬌ '. foldedlinecount . line
+" endfunction
+" set foldtext=MyFoldText()
+" set fillchars=fold:\
 
 " Allow php varibales
 "set iskeyword=@,48-57,_,192-255,$

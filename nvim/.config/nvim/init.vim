@@ -21,8 +21,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'rafamadriz/friendly-snippets'
@@ -39,9 +37,13 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 
+" Folds
+Plug 'kevinhwang91/nvim-ufo'
+Plug 'kevinhwang91/promise-async'
+
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'lewis6991/gitsigns.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
@@ -77,31 +79,44 @@ source $HOME/.config/nvim/after/galaxyline.vim
 source $HOME/.config/nvim/after/dap.vim
 
 lua <<EOF
-require("todo-comments").setup {}
+require"todo-comments".setup {}
 
 require"toggleterm".setup{
   open_mapping = [[<c-\>]],
 	size = 30,
 }
 
-require'Comment'.setup()
+require"Comment".setup()
 local ft = require('Comment.ft')
 ft.dart = {'//%s', '/*%s*/'}
 
 --Comment context
-require'nvim-treesitter.configs'.setup {
+require"nvim-treesitter.configs".setup {
   context_commentstring = {
     enable = true
   }
 }
 
-require("scrollbar").setup()
+require"scrollbar".setup()
 
 require"fidget".setup{
 text = {
     spinner = "dots_snake",
   },
 }
+
+require"gitsigns".setup {}
+
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+vim.wo.foldcolumn = '1'
+vim.wo.foldlevel = 99 -- feel free to decrease the value
+vim.wo.foldenable = true
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+require"ufo".setup()
 EOF
 
 
