@@ -62,6 +62,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 Plug 'petertriho/nvim-scrollbar'
 Plug 'j-hui/fidget.nvim'
+Plug 'RRethy/vim-illuminate' "used in lsp-config
 
 call plug#end()
 
@@ -116,6 +117,12 @@ capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true
 }
+local language_servers = {} -- like {'gopls', 'clangd'}
+for _, ls in ipairs(language_servers) do
+    require('lspconfig')[ls].setup({
+        capabilities = capabilities,
+    })
+end
 require"ufo".setup()
 EOF
 
@@ -135,5 +142,3 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 autocmd BufWritePre * :call TrimWhitespace()
-
-autocmd CursorMoved * exe printf('match CurrentWord /\V\<%s\>/', escape(expand('<cword>'), '/\'))

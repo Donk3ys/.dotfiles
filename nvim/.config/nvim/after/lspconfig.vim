@@ -32,6 +32,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
+		-- Hover word highlight
+   require 'illuminate'.on_attach(client)
 
 end
 
