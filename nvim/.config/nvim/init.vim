@@ -42,8 +42,8 @@ Plug 'kevinhwang91/nvim-ufo'
 Plug 'kevinhwang91/promise-async'
 
 " Git
-Plug 'tpope/vim-fugitive'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'kdheepak/lazygit.nvim'
 
 " lsp
 Plug 'neovim/nvim-lspconfig'
@@ -125,6 +125,9 @@ for _, ls in ipairs(language_servers) do
 end
 require"ufo".setup()
 EOF
+
+" lazygit mapping
+nnoremap <silent> <leader>gg :LazyGit<CR>
 
 
 " Colors
