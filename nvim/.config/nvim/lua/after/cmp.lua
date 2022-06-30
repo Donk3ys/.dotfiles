@@ -1,12 +1,11 @@
-lua <<EOF
-	-- Set completeopt to have a better completion experience
-	vim.o.completeopt = 'menuone,noselect'
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
 
-	-- icons
-	local lspkind = require('lspkind')
+-- icons
+local lspkind = require('after.lspkind')
 
-	local cmp = require'cmp'
-  cmp.setup({
+local cmp = require'cmp'
+cmp.setup({
     snippet = {
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body)
@@ -68,5 +67,3 @@ lua <<EOF
 
 require'luasnip'.filetype_extend("dart", {"flutter"})
 require("luasnip/loaders/from_vscode").lazy_load()
-
-EOF

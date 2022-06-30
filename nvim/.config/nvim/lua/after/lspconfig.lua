@@ -1,4 +1,3 @@
-lua << EOF
 local nvim_lsp = require('lspconfig')
 local protocol = require'vim.lsp.protocol'
 
@@ -165,5 +164,3 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   virtual_text = false,
   }
 )
-
-EOF
