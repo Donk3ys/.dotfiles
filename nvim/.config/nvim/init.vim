@@ -63,6 +63,7 @@ Plug 'NTBBloodbath/galaxyline.nvim' , {'branch': 'main'}
 Plug 'petertriho/nvim-scrollbar'
 Plug 'j-hui/fidget.nvim'
 Plug 'RRethy/vim-illuminate' "used in lsp-config
+Plug 'rcarriga/nvim-notify'
 
 call plug#end()
 
@@ -74,7 +75,6 @@ source $HOME/.config/nvim/after/lspconfig.vim
 source $HOME/.config/nvim/after/treesitter.vim
 source $HOME/.config/nvim/after/autopairs.vim
 source $HOME/.config/nvim/after/telescope.vim
-source $HOME/.config/nvim/after/fugitive.vim
 source $HOME/.config/nvim/after/cmp.vim
 source $HOME/.config/nvim/after/galaxyline.vim
 source $HOME/.config/nvim/after/dap.vim
@@ -108,6 +108,7 @@ text = {
 
 require"gitsigns".setup {}
 
+-- ufo folds
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
 vim.wo.foldcolumn = '1'
 vim.wo.foldlevel = 99 -- feel free to decrease the value
@@ -124,6 +125,8 @@ for _, ls in ipairs(language_servers) do
     })
 end
 require"ufo".setup()
+
+vim.notify = require("notify")
 EOF
 
 " lazygit mapping
