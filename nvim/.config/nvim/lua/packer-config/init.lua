@@ -49,7 +49,7 @@ return require'packer'.startup(function()
 	use 'akinsho/toggleterm.nvim'
 
 	-- Tree Sitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+ 	 use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
 	---- UI
 	use 'sainnhe/gruvbox-material'

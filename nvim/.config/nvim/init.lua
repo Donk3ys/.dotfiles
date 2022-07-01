@@ -5,13 +5,13 @@ require'packer-config'
 
 
 -- Plugins With File Setup
-require'after.autopairs'
-require'after.cmp'
-require'after.dap'
-require'after.galaxyline'
-require'after.lspconfig'
-require'after.telescope'
-require'after.treesitter'
+require'plugins.autopairs'
+require'plugins.cmp'
+require'plugins.dap'
+require'plugins.galaxyline'
+require'plugins.lspconfig'
+require'plugins.telescope'
+require'plugins.treesitter'
 
 
 -- Plugin Setup
