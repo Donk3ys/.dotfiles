@@ -17,11 +17,7 @@ stow -vSt ~ alacritty nvim zsh tmux
 cd ~
 
 # Install packages brew packages
-sudo apt install zsh tmux fzf curl nodejs npm fd-find -y
-
-# Get neovim from source
-wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage -P ~/Downloads
-chmod u+x ~/Downloads/nvim.appimage && ~/Donwnloads/nvim.appimage
+sudo apt install zsh tmux fzf curl nodejs npm fd-find neovim -y
 
 # Install PowerLevel10k
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
@@ -36,9 +32,9 @@ source .zprofile
 chsh -s /bin/zsh
 #homectl update --shell=/bin/zsh
 
-# Install vim-plug plugin mamager for vim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# Install "Packer" plugin manager for neovim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 # Install lsp servers for nvim lsp-config
 sudo npm install -g bash-language-server intelephense typescript typescript-language-server
@@ -54,12 +50,13 @@ flutter doctor --android-licenses
 #sudo apt install openjdk-8-jdk-headless openjdk-11-jdk-headless openjdk-16-jdk-headless -y
 sudo apt install openjdk-16-jdk-headless -y
 
-# Download & insatll Android Studio
+# Download & install Android Studio
 sudo dpkg --add-architecture i386
 sudo apt update -y
 sudo apt install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 -y
 wget "https://dl.google.com/dl/android/studio/ide-zips/2020.3.1.25/android-studio-2020.3.1.25-linux.tar.gz" -P ~/Downloads
 sudo tar -xvzf ~/Downloads/android-studio-2020.3.1.25-linux.tar.gz -C /opt/
+sudo chown -R donk3y /opt/android-studio/
 ## mkdir -p "$HOME"/.local/share/applications
 ## cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
 ## 	[Desktop Entry]
@@ -90,4 +87,9 @@ fc-match Meslo -a
 echo "Installing Finished"
 
 # Run to start android studio for first time
-sudo /opt/android-studio/bin/studio.sh
+# /opt/android-studio/bin/studio.sh
+
+# 1. Install android sdk
+# 2. open extra sdk options and install command line tools
+# 3. run flutter doctor
+# 4. run flutter doctor --android-licenses
