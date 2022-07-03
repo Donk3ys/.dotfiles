@@ -4,7 +4,8 @@ return require'packer'.startup(function()
 	use 'nvim-lua/plenary.nvim'
 
 	-- Buffers
-	use 'romgrk/barbar.nvim'
+	-- use 'romgrk/barbar.nvim'
+	use 'matbme/JABS.nvim'
 
 	-- Comments
 	use 'numToStr/Comment.nvim'

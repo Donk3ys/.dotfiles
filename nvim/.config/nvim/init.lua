@@ -5,13 +5,13 @@ require'packer-config'
 
 
 -- Plugins With File Setup
-require'plugins.autopairs'
-require'plugins.cmp'
-require'plugins.dap'
-require'plugins.galaxyline'
-require'plugins.lspconfig'
-require'plugins.telescope'
-require'plugins.treesitter'
+require'plugin-sets.autopairs'
+require'plugin-sets.cmp'
+require'plugin-sets.dap'
+require'plugin-sets.galaxyline'
+require'plugin-sets.lspconfig'
+require'plugin-sets.telescope'
+require'plugin-sets.treesitter'
 
 
 -- Plugin Setup
@@ -38,7 +38,8 @@ require"fidget".setup{
 }
 require"gitsigns".setup {}
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
-
+require'jabs'.setup {}
+vim.keymap.set("n", "<S-p>", ":JABSOpen<CR>", { silent = true })
 
 -- colorscheme
 vim.cmd('colorscheme gruvbox-material')
