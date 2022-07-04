@@ -24,10 +24,6 @@ set.swapfile=false
 
 set.clipboard=unnamedplus 	-- Copy paste between vim and everything else
 
--- Where to store undo file
-set.undodir='~/.vim/undo-dir'
-set.undofile=true
-
 -- Allow php varibales
 --set.iskeyword=@,48-57,_,192-255,$
 set.iskeyword:append('$')
