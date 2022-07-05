@@ -15,6 +15,7 @@ require'nvim-treesitter.configs'.setup {
     "html",
     "javascript",
     "json",
+    "make",
     "php",
     "rust",
 		"svelte",
