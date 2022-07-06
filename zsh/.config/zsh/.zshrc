@@ -54,8 +54,7 @@ autoload -Uz compinit && compinit
 
 # Aliases
 alias vim="nvim"
-#alias vim="~/Downloads/nvim-osx64/bin/nvim" # MacOS
-#alias vim="~/Downloads/nvim.appimage" # linux
+export EDITOR='nvim'
 alias l="ls -l"
 alias la="ls -a -l"
 alias dkr="docker"
@@ -96,7 +95,3 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .
 
 # Start Tmux and restore last save session
 #tmux a; xdotool key ctrl+a ctrl-r
-
-# Set nvim as defualt editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
