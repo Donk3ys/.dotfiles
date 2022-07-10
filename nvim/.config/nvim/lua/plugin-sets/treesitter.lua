@@ -10,6 +10,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
 		"bash",
     "css",
+		"c_sharp",
 		"dart",
 		"dockerfile",
 		"go",

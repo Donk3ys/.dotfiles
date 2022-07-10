@@ -62,6 +62,10 @@ require'lspconfig'.bashls.setup{
   on_attach = on_attach,
 }
 
+require'lspconfig'.csharp_ls.setup{
+	on_attach = on_attach,
+}
+
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
 }
@@ -100,7 +104,7 @@ require'lspconfig'.tsserver.setup{
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'css' },
+  filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json', 'css' },
   init_options = {
     linters = {
       eslint = {
