@@ -4,6 +4,8 @@ local gl = require("galaxyline")
 local section = gl.section
 gl.short_line_list = {"LuaTree", "packager", "Floaterm"}
 
+local navic = require("nvim-navic")
+
 
 local nord_colors = {
   bg = "NONE",
@@ -91,6 +93,17 @@ section.left[4] = {
     condition = buffer_not_empty,
     highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, nord_colors.line_bg}
   }
+}
+
+section.left[5]= {
+    nvimNavic = {
+        provider = function()
+            return navic.get_location()
+        end,
+        condition = function()
+            return navic.is_available()
+        end
+    }
 }
 
 section.right[2] = {
