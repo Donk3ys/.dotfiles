@@ -1,0 +1,19 @@
+# Vim Plugins
+packer_compiled.lua
+node_modules/
+yarn.lock
+.vim/
+
+# Tmux Plugins
+plugins/
+
+.zcompdump
+.zsh_history
+.zsh_sessions/
+zsh/cache/
+
+# vifm
+vifminfo.json
+
+.netrwhist
+.DS_Store
