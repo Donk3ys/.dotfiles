@@ -1,5 +1,5 @@
-local nvim_lsp = require('lspconfig')
-local protocol = require'vim.lsp.protocol'
+-- local nvim_lsp = require('lspconfig')
+-- local protocol = require'vim.lsp.protocol'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -93,6 +93,9 @@ require('rust-tools').setup{
     }
 }
 
+require'lspconfig'.solidity_ls.setup{
+  on_attach = on_attach,
+}
 
 require'lspconfig'.svelte.setup{
   on_attach = on_attach,
@@ -104,55 +107,6 @@ require'lspconfig'.tsserver.setup{
 
 -- nvim_lsp.diagnosticls.setup {
 --   on_attach = on_attach,
---   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'json', 'css' },
---   init_options = {
---     linters = {
---       eslint = {
---         command = 'eslint_d',
---         rootPatterns = { '.git' },
---         debounce = 100,
---         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
---         sourceName = 'eslint_d',
---         parseJson = {
---           errorsRoot = '[0].messages',
---           line = 'line',
---           column = 'column',
---           endLine = 'endLine',
---           endColumn = 'endColumn',
---           message = '[eslint] ${message} [${ruleId}]',
---           security = 'severity'
---         },
---         securities = {
---           [2] = 'error',
---           [1] = 'warning'
---         }
---       },
---     },
---     filetypes = {
---       javascript = 'eslint',
---       javascriptreact = 'eslint',
---       typescript = 'eslint',
---       typescriptreact = 'eslint',
---     },
---     formatters = {
---       eslint_d = {
---         command = 'eslint_d',
---         args = { '--stdin', '--stdin-filename', '%filename', '--fix-to-stdout' },
---         rootPatterns = { '.git' },
---       },
---       prettier = {
---         command = 'prettier',
---         args = { '--stdin-filepath', '%filename' }
---       }
---     },
---     formatFiletypes = {
---       css = 'prettier',
---       javascript = 'eslint_d',
---       javascriptreact = 'eslint_d',
---       json = 'prettier',
---       markdown = 'prettier',
---     }
---   }
 -- }
 
 -- icon
@@ -165,6 +119,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     --   prefix = ''
     -- }
 
-  virtual_text = false,
+  	virtual_text = false,
   }
 )
