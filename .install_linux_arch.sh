@@ -36,11 +36,11 @@ sudo usermod -a G video donk3y
 sudo pacman -S git stow --noconfirm
 # git clone https://github.com/Donk3ys/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/
-stow -vSt ~ alacritty nvim zsh tmux
+stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim nodejs npm fzf fd ripgrep alacritty go yay --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim nodejs npm fzf fd ripgrep alacritty go yay flameshot copyq --noconfirm
 
 # Add tmux packages
 mkdir ~/.dotfiles/tmux/.config/tmux/plugins
@@ -64,25 +64,25 @@ chsh -s /bin/zsh
 sudo yay -S nvim-packer-git --noconfirm
 
 # Install lsp servers for nvim lsp-config
-sudo npm install -g bash-language-server diagnostic-languageserver intelephense typescript typescript-language-server
+sudo npm install -g bash-language-server diagnostic-languageserver intelephense solidity-language-server typescript typescript-language-server
 
 # Install flutter
-mkdir ~/development
-git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
-flutter precache
-flutter doctor --android-licenses
+# mkdir ~/development
+# git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
+# flutter precache
+# flutter doctor --android-licenses
 
 # Get android studio setup for sdk
 # Install JDK
-sudo pacman -S jdk-openjdk --noconfirm
+# sudo pacman -S jdk-openjdk --noconfirm
 
 # Download & install Android Studio
-# sudo dpkg --add-architecture i386
-# sudo pacman -S libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 --noconfirm
-wget "https://dl.google.com/dl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz" -P ~/Downloads
-sudo tar -xvzf ~/Downloads/android-studio-2021.1.1.22-linux.tar.gz -C /opt/
-# Change ownership of android studio to current user group
-sudo chown -R donk3y /opt/android-studio/
+# # sudo dpkg --add-architecture i386
+# # sudo pacman -S libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 --noconfirm
+# wget "https://dl.google.com/dl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz" -P ~/Downloads
+# sudo tar -xvzf ~/Downloads/android-studio-2021.1.1.22-linux.tar.gz -C /opt/
+# # Change ownership of android studio to current user group
+# sudo chown -R donk3y /opt/android-studio/
 ## mkdir -p "$HOME"/.local/share/applications
 ## cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
 ## 	[Desktop Entry]
