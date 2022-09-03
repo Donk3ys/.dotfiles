@@ -23,6 +23,7 @@ require('telescope').setup{
 			}
   	},
     layout_strategy = "vertical",
+ 		file_ignore_patterns = { "node_modules" },
   }
 }
 require('telescope').load_extension "fzf"
