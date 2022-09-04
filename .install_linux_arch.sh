@@ -20,13 +20,15 @@ make
 sudo make install
 rogauracore initialize_keyboard
 rogauracore red
-rogauracore brightness 2
+rogauracore brightness 1
 # add start bash script to /etc/profile.d/ folder
 	# !/bin/bash
-	# rogauracore red
-	# rogauracore brightness 2
-	# Set mouse sensitivity
-	# xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matrix" 0.3 0 0 0 0.3 0 0 0 1
+echo '
+rogauracore red
+rogauracore brightness 1
+Set mouse sensitivity
+xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matrix" 0.3 0 0 0 0.3 0 0 0 1
+' | sudo tee -a /etc/profile
 # install light for screen brightness
 sudo pacman -S light
 sudo usermod -a G video donk3y
@@ -40,7 +42,7 @@ stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim nodejs npm fzf fd ripgrep alacritty go yay flameshot copyq --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim nodejs npm fzf fd ripgrep alacritty go yay flameshot copyq xclip --noconfirm
 
 # Add tmux packages
 mkdir ~/.dotfiles/tmux/.config/tmux/plugins
@@ -55,13 +57,17 @@ cp ~/.dotfiles/zsh/.config/zsh/themes/powerlevel10k.zsh-theme ~/.powerlevel10k
 cp .zprofile .zshrc
 source .zprofile
 
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
+#wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/last-working-dir/last-working-dir.plugin.zsh ~/.config/zsh/plugins
+
 # Logout and back in to load .zprofile
 # chsh -l
 chsh -s /bin/zsh
 #homectl update --shell=/bin/zsh
 
 # Install "Packer" plugin manager for neovim
-sudo yay -S nvim-packer-git --noconfirm
+yay -S nvim-packer-git --noconfirm
 
 # Install lsp servers for nvim lsp-config
 sudo npm install -g bash-language-server diagnostic-languageserver intelephense solidity-language-server typescript typescript-language-server

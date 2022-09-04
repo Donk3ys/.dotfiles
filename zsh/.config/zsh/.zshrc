@@ -44,7 +44,7 @@ source "$ZDOTDIR/zsh-functions"
 
 
 # Plugins
-source ~/.config/zsh/plugins/last-working-dir.zsh
+#source ~/.config/zsh/plugins/last-working-dir.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 export CLICOLOR=1
