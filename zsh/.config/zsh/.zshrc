@@ -56,7 +56,8 @@ autoload -Uz compinit && compinit
 
 
 # Aliases
-alias vim="~/Downloads/nvim.appimage"
+alias vim="nvim"
+# alias vim="~/Downloads/nvim.appimage"
 export EDITOR='vim'
 alias l="ls -l"
 alias la="ls -a -l"
