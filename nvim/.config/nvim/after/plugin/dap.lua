@@ -1,21 +1,40 @@
 local dap = require('dap')
 
-  dap.adapters.dart = {
-    type = "executable",
-    command = "node",
-    args = {os.getenv('HOME').."/development/Dart-Code/out/dist/debug.js", "flutter"}
-  }
-  dap.configurations.dart = {
-    {
-      type = "dart",
-      request = "launch",
-      name = "Launch flutter",
-      dartSdkPath = os.getenv('HOME').."/development/flutter/bin/cache/dart-sdk/",
-      flutterSdkPath = os.getenv('HOME').."/development/flutter",
-      program = "${workspaceFolder}/lib/main.dart",
-      cwd = "${workspaceFolder}",
-    }
-  }
+-- C# 
+dap.adapters.coreclr = {
+  type = 'executable',
+  command = '/usr/bin/netcoredbg',
+  args = {'--interpreter=vscode'}
+}
+dap.configurations.cs = {
+  {
+    type = "coreclr",
+    name = "launch - netcoredbg",
+    request = "launch",
+    program = function()
+        return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+    end,
+  },
+}
+
+-- Dart / Flutter
+dap.adapters.dart = {
+	type = "executable",
+	command = "node",
+	args = {os.getenv('HOME').."/development/Dart-Code/out/dist/debug.js", "flutter"}
+}
+dap.configurations.dart = {
+	{
+		type = "dart",
+		request = "launch",
+		name = "Launch flutter",
+		dartSdkPath = os.getenv('HOME').."/development/flutter/bin/cache/dart-sdk/",
+		flutterSdkPath = os.getenv('HOME').."/development/flutter",
+		program = "${workspaceFolder}/lib/main.dart",
+		cwd = "${workspaceFolder}",
+	}
+}
+
 
 require('dap-go').setup()
 require("dapui").setup()
