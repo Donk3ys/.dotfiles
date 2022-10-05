@@ -41,6 +41,8 @@ return require'packer'.startup(function()
 	-- Git
 	use 'lewis6991/gitsigns.nvim'
 	use 'kdheepak/lazygit.nvim'
+	use 'f-person/git-blame.nvim'
+	use 'sindrets/diffview.nvim'
 
 	-- lsp
 	use 'neovim/nvim-lspconfig'

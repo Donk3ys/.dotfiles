@@ -27,6 +27,8 @@ require"fidget".setup{
 require"gitsigns".setup {}
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
+vim.g.gitblame_disabled = 0
+
 require'jabs'.setup {}
 vim.keymap.set("n", "<S-p>", ":JABSOpen<CR>", { silent = true })
 
