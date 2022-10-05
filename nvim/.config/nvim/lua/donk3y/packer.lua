@@ -60,6 +60,5 @@ return require'packer'.startup(function()
 	use 'petertriho/nvim-scrollbar'
 	use 'j-hui/fidget.nvim'
 	use 'RRethy/vim-illuminate'
-	use 'SmiteshP/nvim-navic'  --used in lsp-config
 	use 'rcarriga/nvim-notify'
 end)
