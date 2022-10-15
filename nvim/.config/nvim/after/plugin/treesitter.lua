@@ -30,23 +30,23 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+-- vim.wo.foldmethod = "expr"
+-- vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
--- ufo folds
-vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-vim.wo.foldcolumn = '1'
-vim.wo.foldlevel = 99 -- feel free to decrease the value
-vim.wo.foldenable = true
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
-}
-local language_servers = {} -- like {'gopls', 'clangd'}
-for _, ls in ipairs(language_servers) do
-    require('lspconfig')[ls].setup({
-        capabilities = capabilities,
-    })
-end
-require"ufo".setup()
+-- -- ufo folds
+-- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
+-- vim.wo.foldcolumn = '1'
+-- vim.wo.foldlevel = 99 -- feel free to decrease the value
+-- vim.wo.foldenable = true
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+-- capabilities.textDocument.foldingRange = {
+--     dynamicRegistration = false,
+--     lineFoldingOnly = true
+-- }
+-- local language_servers = {} -- like {'gopls', 'clangd'}
+-- for _, ls in ipairs(language_servers) do
+--     require('lspconfig')[ls].setup({
+--         capabilities = capabilities,
+--     })
+-- end
+-- require"ufo".setup()

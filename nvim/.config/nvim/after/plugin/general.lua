@@ -29,9 +29,6 @@ vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
 vim.g.gitblame_disabled = 0
 
-require'jabs'.setup {}
-vim.keymap.set("n", "<S-p>", ":JABSOpen<CR>", { silent = true })
-
 require('illuminate').configure({
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {

@@ -5,7 +5,6 @@ return require'packer'.startup(function()
 
 	-- Buffers
 	-- use 'romgrk/barbar.nvim'
-	use 'matbme/JABS.nvim'
 
 	-- Comments
 	use 'numToStr/Comment.nvim'
@@ -35,8 +34,8 @@ return require'packer'.startup(function()
 	use 'nvim-telescope/telescope-file-browser.nvim'
 
 	-- Folds
-	use 'kevinhwang91/nvim-ufo'
-	use 'kevinhwang91/promise-async'
+	-- use 'kevinhwang91/nvim-ufo'
+	-- use 'kevinhwang91/promise-async'
 
 	-- Git
 	use 'lewis6991/gitsigns.nvim'
