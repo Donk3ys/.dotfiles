@@ -12,7 +12,25 @@ dap.configurations.cs = {
     name = "launch - netcoredbg",
     request = "launch",
     program = function()
-        return vim.fn.input('Path to dll', vim.fn.getcwd() .. '/bin/Debug/', 'file')
+					local filename = ""
+					local cwd = vim.fn.getcwd()
+					-- Loop through files
+					local p = io.popen('find "'..cwd..'" -type f')
+					for file in p:lines() do						
+						local ext = file:match("^.+(%..+)$") -- ".csproj"
+						if ext == ".csproj" then
+							
+							-- Split string by /
+							local paths = {};
+							for match in (file.."/"):gmatch("(.-)".."/") do
+									table.insert(paths, match);
+							end
+							
+							filename = string.sub(paths[#paths], 1, -8) .. ".dll"
+						end
+					end
+
+        return vim.fn.input('Path to dll', cwd .. '/bin/Debug/net6.0/' .. filename, 'file')
     end,
   },
 }
