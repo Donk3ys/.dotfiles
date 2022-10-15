@@ -5,8 +5,8 @@ local opts = {noremap=true, silent=true}
 vim.g.mapleader=' '
 
 -- Buffers
-map('n', '<C-p>', ':BufferPrevious<CR>', opts)
-map('n', '<C-n>', ':BufferNext<CR>', opts)
+map('n', '<C-p>', ':bprev<CR>', opts)
+map('n', '<C-n>', ':bnext<CR>', opts)
 
 -- SHIFT-< & SHIFT-> Better tabbing
 map('v', '<', '<gv', opts)

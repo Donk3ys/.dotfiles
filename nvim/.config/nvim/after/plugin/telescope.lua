@@ -3,14 +3,14 @@ local keymap = vim.keymap.set
 local opts = { silent = true }
 --keymap("n", "<S-a>", "<cmd>Telescope lsp_code_actions<CR>", opts)
 keymap("n", "<S-a>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-keymap("n", "<S-d>", "<cmd>Telescope diagnostics<CR>", opts)
-keymap("n", "<S-e>", "<cmd>Telescope file_browser<CR>", opts)
-keymap("n", "<S-h>", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>", opts)
-keymap("n", "<S-l>", "<cmd>Telescope live_grep<CR>", opts)
-keymap("n", "<S-f>", "<cmd>Telescope find_files<CR>", opts)
-keymap("n", "<S-r>", "<cmd>Telescope lsp_references<CR>", opts)
-keymap("n", "<S-t>", "<cmd>Telescope TodoTelescope<CR>", opts)
+keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", opts)
+keymap("n", "<leader>fe", "<cmd>Telescope file_browser<CR>", opts)
+keymap("n", "<leader>fh", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fr", "<cmd>Telescope lsp_references<CR>", opts)
 keymap("n", "<leader>fl", "<cmd>Telescope flutter commands<CR>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 
 -- Global remapping
 ------------------------------
