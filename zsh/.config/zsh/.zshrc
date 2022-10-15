@@ -59,6 +59,7 @@ autoload -Uz compinit && compinit
 alias vim="nvim"
 # alias vim="~/Downloads/nvim.appimage"
 export EDITOR='vim'
+alias vi='vim -c "Telescope find_files"'
 alias l="ls -l"
 alias la="ls -a -l"
 alias dkr="docker"
@@ -96,6 +97,10 @@ source /usr/share/fzf/completion.zsh    # Arch
 export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .git"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Start Tmux and restore last save session
 #tmux a; xdotool key ctrl+a ctrl-r
