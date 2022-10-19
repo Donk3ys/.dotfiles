@@ -4,7 +4,7 @@ return require'packer'.startup(function()
 	use 'nvim-lua/plenary.nvim'
 
 	-- Buffers
-	-- use 'romgrk/barbar.nvim'
+	use 'romgrk/barbar.nvim'
 
 	-- Comments
 	use 'numToStr/Comment.nvim'
@@ -26,6 +26,12 @@ return require'packer'.startup(function()
 	use 'mfussenegger/nvim-dap'
 	use 'rcarriga/nvim-dap-ui'
 	use 'theHamsta/nvim-dap-virtual-text'
+	use 'mxsdev/nvim-dap-vscode-js'
+	use {
+		"microsoft/vscode-js-debug",
+		opt = true,
+		run = "npm install --legacy-peer-deps && npm run compile" 
+	}
 
 	-- File Explore
 	use 'nvim-telescope/telescope.nvim'
