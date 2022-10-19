@@ -24,6 +24,11 @@ require('telescope').setup{
   	},
     layout_strategy = "vertical",
  		file_ignore_patterns = { "node_modules" },
+		mappings = {
+      i = {
+        ['<A-d>'] = require('telescope.actions').delete_buffer,
+      }
+    }
   }
 }
 require('telescope').load_extension "fzf"
