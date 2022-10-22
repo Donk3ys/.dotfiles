@@ -29,9 +29,9 @@ local kind_presets = {
 			Struct = "פּ (sruct)",
 			Event = " (event)",
 			Operator = " (operator)",
-			TypeParameter = ""
+			TypeParameter = "",
   },
-  }
+}
 
 local kind_order = {
   'Text', 'Method', 'Function', 'Constructor', 'Field', 'Variable', 'Class', 'Interface', 'Module',

@@ -1,8 +1,6 @@
 -- Find files using Telescope command-line sugar.
 local keymap = vim.keymap.set
 local opts = { silent = true }
---keymap("n", "<S-a>", "<cmd>Telescope lsp_code_actions<CR>", opts)
-keymap("n", "<S-a>", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>fe", "<cmd>Telescope file_browser<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>", opts)

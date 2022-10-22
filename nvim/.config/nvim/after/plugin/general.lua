@@ -27,8 +27,6 @@ require"fidget".setup{
 require"gitsigns".setup {}
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
-vim.g.gitblame_disabled = 0
-
 require('illuminate').configure({
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {

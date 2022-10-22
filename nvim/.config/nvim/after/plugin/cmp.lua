@@ -32,26 +32,11 @@ cmp.setup({
 
 	formatting = {
 	   format = lspkind.cmp_format({with_text = false, maxwidth = 50})
-
- 	--	format = function(entry, vim_item)
-	--		vim_item.kind = lspkind.presets.default[vim_item.kind]
-
-		-- add source info
-	  --  vim_item.menu = ({
-		--		buffer = "[Buffer]",
-		--		nvim_lsp = "[LSP]",
-		--		luasnip = "[LuaSnip]",
-		--		nvim_lua = "[Lua]",
-		--		latex_symbols = "[Latex]",
-		--	})[entry.source.name]
-
-		--	return vim_item
-		--end
 	},
 
 	experimental = {
 		native_menu = false,
-	--	ghost_text = true,
+		-- ghost_text = true,
 	},
 
 	sources = {
