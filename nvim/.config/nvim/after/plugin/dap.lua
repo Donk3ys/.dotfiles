@@ -83,7 +83,21 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 end
 
 
-require("dapui").setup()
+require("dapui").setup({
+	icons = { expanded = "", collapsed = "", current_frame = "ﰛ" },
+	controls = {
+    icons = {
+      pause = "",
+      play = "",
+      step_into = "",
+      step_over = "",
+      step_out = "",
+      step_back = "",
+      run_last = "",
+      terminate = "",
+    },
+  },
+})
 require("nvim-dap-virtual-text").setup()
 -- let g:dap_virtual_text=v:true
 
