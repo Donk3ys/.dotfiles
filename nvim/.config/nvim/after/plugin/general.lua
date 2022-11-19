@@ -15,7 +15,46 @@ require"nvim-treesitter.configs".setup {
 		enable = true
 	}
 }
-require"scrollbar".setup()
+
+-- vim.cmd [[highlight IndentBlanklineContextStart guisp=#61AFEF gui=underline]]
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#1d2021 gui=nocombine]]
+require("indent_blankline").setup {
+    -- show_current_context_start = true,
+    show_current_context = true,
+	  indentLine_enabled = 1,
+		filetype_exclude = {
+			"log",
+		},
+}
+
+require"scrollbar".setup({
+	marks = {
+        Search = {
+            text = { "s" },
+            highlight = "Purple",
+        },
+        Error = {
+            text = { "e" },
+            highlight = "Red",
+        },
+        Warn = {
+            text = { "w" },
+            highlight = "Yellow",
+        },
+        Info = {
+            text = { "i" },
+            highlight = "Blue",
+        },
+        Hint = {
+            text = { "h" },
+            highlight = "Green",
+        },
+    },
+	handlers = {
+        diagnostic = true,
+        gitsigns = true, -- Requires gitsigns.nvim
+    },
+})
 
 vim.notify = require("notify")
 
@@ -24,7 +63,7 @@ require"fidget".setup{
 			spinner = "dots_snake",
 		},
 }
-require"gitsigns".setup {}
+require"gitsigns".setup() 
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
 require('illuminate').configure({
