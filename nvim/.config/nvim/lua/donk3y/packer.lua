@@ -60,6 +60,7 @@ return require'packer'.startup(function()
  	 use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
 	---- UI
+	use "lukas-reineke/indent-blankline.nvim"
 	use 'sainnhe/gruvbox-material'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'NTBBloodbath/galaxyline.nvim'
