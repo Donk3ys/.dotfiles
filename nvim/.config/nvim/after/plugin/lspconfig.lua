@@ -32,10 +32,6 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.api.nvim_command [[augroup END]]
   end
-
-	-- Navic StatusLine
-	 require'nvim-navic'.attach(client, bufnr)
-
 end
 
 --Add fluter tools
