@@ -42,7 +42,7 @@ stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go yay flameshot copyq xclip --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go yay flameshot copyq xclip blueman --noconfirm
 
 # Install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
