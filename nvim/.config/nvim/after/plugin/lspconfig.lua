@@ -1,6 +1,3 @@
--- local nvim_lsp = require('lspconfig')
--- local protocol = require'vim.lsp.protocol'
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -25,13 +22,13 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts) -- lspSaga
   buf_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts) -- lspSaga
 
-  -- formatting on save
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[augroup Format]]
-    vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-    vim.api.nvim_command [[augroup END]]
-  end
+  -- -- formatting on save
+  -- if client.server_capabilities.documentFormattingProvider then
+  --   vim.api.nvim_command [[augroup Format]]
+  --   vim.api.nvim_command [[autocmd! * <buffer>]]
+  --   vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+  --   vim.api.nvim_command [[augroup END]]
+  -- end
 end
 
 --Add fluter tools
@@ -68,34 +65,7 @@ require'lspconfig'.gopls.setup{
   on_attach = on_attach,
 }
 
-require'lspconfig'.intelephense.setup{
-  on_attach = on_attach,
-}
-
--- require'lspconfig'.rust_analyzer.setup{
---  on_attach = on_attach,
--- }
-require('rust-tools').setup{
-    tools = {
-        autoSetHints = true,
-        -- hover_with_actions = true,
-        inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-        },
-    },
-
-    server = {
-        on_attach = on_attach,
-    }
-}
-
 require'lspconfig'.solidity_ls.setup{
-  on_attach = on_attach,
-}
-
-require'lspconfig'.svelte.setup{
   on_attach = on_attach,
 }
 

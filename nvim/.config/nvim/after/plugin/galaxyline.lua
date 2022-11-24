@@ -221,9 +221,9 @@ section.short_line_left[2] = {
   }
 }
 
-section.short_line_right[1] = {
-  BufferIcon = {
-    provider = "BufferIcon",
-    highlight = {nord_colors.fg, nord_colors.lbg}
-  }
-}
+-- section.short_line_right[1] = {
+--   BufferIcon = {
+--     provider = "BufferIcon",
+--     highlight = {nord_colors.fg, nord_colors.lbg}
+--   }
+-- }

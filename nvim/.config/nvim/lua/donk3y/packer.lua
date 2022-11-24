@@ -51,7 +51,6 @@ return require'packer'.startup(function()
 	-- lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'
-	use 'simrat39/rust-tools.nvim'
 
 	-- Terminal
 	use 'akinsho/toggleterm.nvim'

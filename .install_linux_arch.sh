@@ -31,7 +31,7 @@ xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matr
 ' | sudo tee -a /etc/profile
 # install light for screen brightness
 sudo pacman -S light
-sudo usermod -a G video donk3y
+sudo usermod -a G video $USER
 # Must reboot to take effect
 
 # Install git & stow then clone .dotfiles & stow files
@@ -42,7 +42,12 @@ stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim nodejs npm fzf fd ripgrep alacritty go yay flameshot copyq xclip --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go yay flameshot copyq xclip --noconfirm
+
+# Install node version manager
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+nvm install --lts
+nvm alias default node
 
 # Add tmux packages
 mkdir ~/.dotfiles/tmux/.config/tmux/plugins
@@ -70,7 +75,7 @@ chsh -s /bin/zsh
 yay -S nvim-packer-git --noconfirm
 
 # Install lsp servers for nvim lsp-config
-sudo npm install -g bash-language-server diagnostic-languageserver intelephense solidity-language-server typescript typescript-language-server
+sudo npm install -g bash-language-server diagnostic-languageserver solidity-language-server typescript typescript-language-server
 
 # Install flutter
 # mkdir ~/development
