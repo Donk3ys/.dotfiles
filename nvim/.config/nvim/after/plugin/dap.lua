@@ -54,12 +54,24 @@ dap.configurations.dart = {
 }
 
 -- Go
-require('dap-go').setup()
+require('dap-go').setup {
+  dap_configurations = {
+    {
+      type = "go",
+      name = "Attach remote",
+      mode = "remote",
+      request = "attach",
+    },
+  },
+	delve = {
+    port = "2345",
+  },
+}
 
 -- TS / JS
 require("dap-vscode-js").setup {
 	node_path = "node",
-	debugger_path = DEBUGGER_PATH,
+	debugger_path = "/home/donk3y/.local/share/nvim/site/pack/packer/opt/vscode-js-debug",
 	-- debugger_cmd = { "js-debug-adapter" },
 	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 }
@@ -72,7 +84,6 @@ for _, language in ipairs { "typescript", "javascript" } do
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
-			runtimeExecutable = "${workspaceFolder}/node_modules/.bin/ts-node",
 		},
 		{
 			type = "pwa-node",
