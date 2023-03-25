@@ -56,7 +56,7 @@ require"scrollbar".setup({
     },
 })
 
-vim.notify = require("notify")
+-- vim.notify = require("notify")
 
 require"fidget".setup{
 	text = {
