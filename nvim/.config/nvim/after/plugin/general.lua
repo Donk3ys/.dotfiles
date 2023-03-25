@@ -1,4 +1,6 @@
 -- Plugin Setup
+require"mason".setup()
+
 require"todo-comments".setup {}
 
 require"toggleterm".setup{

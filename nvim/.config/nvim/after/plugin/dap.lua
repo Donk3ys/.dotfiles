@@ -110,6 +110,35 @@ for _, language in ipairs { "typescript", "javascript" } do
 	}
 end
 
+-- C / C++ / Rust
+dap.adapters.codelldb = {
+  type = 'server',
+  port = "${port}",
+  executable = {
+    command = '/home/donk3y/.local/share/nvim/mason/bin/codelldb',
+    args = {"--port", "${port}"},
+  }
+}
+dap.configurations.rust = {
+  {
+    name = "Launch file",
+    type = "codelldb",
+    request = "launch",
+    program = function()
+			local cwd = vim.fn.getcwd()
+			local proj = ""
+			for i in string.gmatch(cwd, "[^/]+") do
+				proj = i 
+			end
+      return vim.fn.input('Path to executable: ', cwd .. '/target/debug/' .. proj, 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+  },
+}
+-- dap.configurations.c = dap.configurations.rust
+-- dap.configurations.cpp = dap.configurations.rust
+
 
 require("dapui").setup({
 	icons = { expanded = "", collapsed = "", current_frame = "ﰛ" },

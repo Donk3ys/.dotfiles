@@ -19,6 +19,7 @@ require'nvim-treesitter.configs'.setup {
     "json",
 		"lua",
     "make",
+    "rust",
  		"solidity",
     "toml",
     "typescript",

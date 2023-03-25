@@ -31,8 +31,16 @@ local on_attach = function(client, bufnr)
   end
 end
 
---Add fluter tools
-require("flutter-tools").setup {
+
+require'lspconfig'.bashls.setup{
+  on_attach = on_attach,
+}
+
+require'lspconfig'.csharp_ls.setup{
+	on_attach = on_attach,
+}
+
+require'flutter-tools'.setup {
 	lsp = {
 		on_attach = on_attach,
 		    color = { -- show the derived colours for dart variables
@@ -53,16 +61,14 @@ require("flutter-tools").setup {
 	-- },
 }
 
-require'lspconfig'.bashls.setup{
-  on_attach = on_attach,
-}
-
-require'lspconfig'.csharp_ls.setup{
-	on_attach = on_attach,
-}
-
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
+}
+
+require'rust-tools'.setup{
+  server = {
+    on_attach = on_attach,
+  },
 }
 
 require'lspconfig'.solidity_ls.setup{

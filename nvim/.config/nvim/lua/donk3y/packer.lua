@@ -48,9 +48,17 @@ return require'packer'.startup(function()
 	use 'kdheepak/lazygit.nvim'
 	use 'sindrets/diffview.nvim'
 
-	-- lsp
+	-- Linters
+	use 'jose-elias-alvarez/null-ls.nvim'	
+
+	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'
+	use 'simrat39/rust-tools.nvim'
+
+	-- Mason
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
 
 	-- Terminal
 	use 'akinsho/toggleterm.nvim'
