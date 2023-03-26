@@ -3,7 +3,7 @@ local dap = require('dap')
 -- C# 
 dap.adapters.coreclr = {
   type = 'executable',
-  command = '/usr/bin/netcoredbg',
+  command = os.getenv('HOME') .. '/.local/share/nvim/mason/bin/netcoredbg',
   args = {'--interpreter=vscode'}
 }
 dap.configurations.cs = {
@@ -71,7 +71,7 @@ require('dap-go').setup {
 -- TS / JS
 require("dap-vscode-js").setup {
 	node_path = "node",
-	debugger_path = "/home/donk3y/.local/share/nvim/site/pack/packer/opt/vscode-js-debug",
+	debugger_path = os.getenv('HOME') .. "/.local/share/nvim/site/pack/packer/opt/vscode-js-debug",
 	-- debugger_cmd = { "js-debug-adapter" },
 	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 }
@@ -85,28 +85,28 @@ for _, language in ipairs { "typescript", "javascript" } do
 			program = "${file}",
 			cwd = "${workspaceFolder}",
 		},
-		{
-			type = "pwa-node",
-			request = "attach",
-			name = "Attach",
-			processId = require("dap.utils").pick_process,
-			cwd = "${workspaceFolder}",
-		},
-		{
-			type = "pwa-node",
-			request = "launch",
-			name = "Debug Jest Tests",
-			-- trace = true, -- include debugger info
-			runtimeExecutable = "node",
-			runtimeArgs = {
-				"./node_modules/jest/bin/jest.js",
-				"--runInBand",
-			},
-			rootPath = "${workspaceFolder}",
-			cwd = "${workspaceFolder}",
-			console = "integratedTerminal",
-			internalConsoleOptions = "neverOpen",
-		},
+		-- {
+		-- 	type = "pwa-node",
+		-- 	request = "attach",
+		-- 	name = "Attach",
+		-- 	processId = require("dap.utils").pick_process,
+		-- 	cwd = "${workspaceFolder}",
+		-- },
+		-- {
+		-- 	type = "pwa-node",
+		-- 	request = "launch",
+		-- 	name = "Debug Jest Tests",
+		-- 	-- trace = true, -- include debugger info
+		-- 	runtimeExecutable = "node",
+		-- 	runtimeArgs = {
+		-- 		"./node_modules/jest/bin/jest.js",
+		-- 		"--runInBand",
+		-- 	},
+		-- 	rootPath = "${workspaceFolder}",
+		-- 	cwd = "${workspaceFolder}",
+		-- 	console = "integratedTerminal",
+		-- 	internalConsoleOptions = "neverOpen",
+		-- },
 	}
 end
 
@@ -115,7 +115,7 @@ dap.adapters.codelldb = {
   type = 'server',
   port = "${port}",
   executable = {
-    command = '/home/donk3y/.local/share/nvim/mason/bin/codelldb',
+    command = os.getenv('HOME') .. '/.local/share/nvim/mason/bin/codelldb',
     args = {"--port", "${port}"},
   }
 }

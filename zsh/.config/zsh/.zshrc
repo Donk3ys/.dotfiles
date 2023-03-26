@@ -13,7 +13,7 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$PATH":"/home/donk3y/.dotnet/tools"
 
 # Flutter /Users/donk3y/development/flutter/bin
-export PATH="$HOME/development/flutter/bin:$PATH"
+export PATH="$HOME/flutter/bin:$PATH"
 
 # Go
 export PATH="$PATH:$(go env GOPATH)/bin"
@@ -29,7 +29,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # eval "$(pyenv init -)"
 
 # Rust
-# . "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
@@ -101,6 +101,11 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# Add flatpak images to bin
+if [ -d "/var/lib/flatpak/exports/bin/" ] ;
+  then PATH="/var/lib/flatpak/exports/bin/:$PATH"
+fi
 
 # Start Tmux and restore last save session
 #tmux a; xdotool key ctrl+a ctrl-r
