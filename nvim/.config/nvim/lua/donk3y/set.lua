@@ -9,7 +9,9 @@ set.mouse='a'             	-- Enable your mouse
 set.splitbelow=true         -- Horizontal splits will automatically be below
 set.splitright=true         -- Vertical splits will automatically be to the right
 
+set.expandtab=true
 set.tabstop=2           		-- Insert 2 spaces for a tab
+set.softtabstop=2
 set.shiftwidth=2        		-- Change the number of space characters inserted for indentation
 set.smarttab=true           -- Makes tabbing smarter will realize you have 2 vs 4
 set.smartindent=true        -- Makes indenting smart

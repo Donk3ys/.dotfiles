@@ -72,7 +72,8 @@ return require'packer'.startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'NTBBloodbath/galaxyline.nvim'
 	use 'petertriho/nvim-scrollbar'
-	use 'j-hui/fidget.nvim'
+	-- use 'j-hui/fidget.nvim'
+  use {'j-hui/fidget.nvim', tag = 'legacy' }
 	use 'RRethy/vim-illuminate'
 	use 'rcarriga/nvim-notify'
 end)

@@ -73,6 +73,15 @@ require'rust-tools'.setup{
 
 require'lspconfig'.solidity_ls.setup{
   on_attach = on_attach,
+  -- cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+ --  -- cmd = { "solidity-language-server", "--stdio" },
+	-- filetypes = { 'solidity' },
+	-- root_dir = require("lspconfig.util").find_git_ancestor,
+	-- single_file_support = true,
+}
+
+require'lspconfig'.svelte.setup{
+	on_attach = on_attach,
 }
 
 require'lspconfig'.tsserver.setup{
@@ -100,7 +109,8 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 local null_ls = require'null-ls'
 null_ls.setup({
     sources = {
-        null_ls.builtins.formatting.prettier,
+        -- null_ls.builtins.formatting.prettier,
+				-- null_ls.builtins.code_actions.eslint_d,
         -- null_ls.builtins.formatting.yamllint,
     },
 })

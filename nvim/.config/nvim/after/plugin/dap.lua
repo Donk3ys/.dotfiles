@@ -64,6 +64,7 @@ require('dap-go').setup {
     },
   },
 	delve = {
+    path = "/home/donk3y/.local/share/nvim/mason/bin/dlv",
     port = "2345",
   },
 }
@@ -75,7 +76,6 @@ require("dap-vscode-js").setup {
 	-- debugger_cmd = { "js-debug-adapter" },
 	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
 }
-
 for _, language in ipairs { "typescript", "javascript" } do
 	require("dap").configurations[language] = {
 		{

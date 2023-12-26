@@ -1,5 +1,6 @@
 -- Plugin Setup
-require"mason".setup()
+-- require"mason".setup()
+-- require"mason-lspconfig".setup()
 
 require"todo-comments".setup {}
 
@@ -12,22 +13,29 @@ require"Comment".setup()
 local ft = require('Comment.ft')
 ft.dart = {'//%s', '/*%s*/'}
 --Comment context
-require"nvim-treesitter.configs".setup {
-	context_commentstring = {
-		enable = true
-	}
-}
+require('ts_context_commentstring').setup {} 
+vim.g.skip_ts_context_commentstring_module = true
+-- require"nvim-treesitter.configs".setup {
+-- 	context_commentstring = {
+-- 		enable = true
+-- 	}
+-- }
 
--- vim.cmd [[highlight IndentBlanklineContextStart guisp=#61AFEF gui=underline]]
-vim.cmd [[highlight IndentBlanklineContextChar guifg=#1d2021 gui=nocombine]]
-require("indent_blankline").setup {
-    -- show_current_context_start = true,
-    show_current_context = true,
-	  indentLine_enabled = 1,
-		filetype_exclude = {
-			"log",
-		},
+local highlight = {
+    "LightGray",
 }
+local hooks = require "ibl.hooks"
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "LightGray", { fg = "#7A7A7A" })
+end)
+vim.g.rainbow_delimiters = { highlight = highlight }
+require("ibl").setup { 
+	exclude = {
+   filetypes = {"log"}
+  },
+  scope = { highlight = highlight },
+}
+hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 
 require"scrollbar".setup({
 	marks = {
