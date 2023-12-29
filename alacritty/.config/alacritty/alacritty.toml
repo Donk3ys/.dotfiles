@@ -1,0 +1,59 @@
+[colors.cursor]
+cursor = "#d4be98"
+text = "#282828"
+
+[colors.normal]
+black = "#504945"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#ddc7a1"
+yellow = "#d8a657"
+
+[colors.primary]
+background = "#1d2021"
+bright_foreground = "#ffffff"
+dim_foreground = "#ffffff"
+foreground = "#d4be98"
+
+[colors.selection]
+background = "#a89984"
+text = "#1d2021"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[font]
+size = 8.0
+
+[font.bold]
+family = "MesloLGS NF"
+style = "Bold"
+
+[font.italic]
+family = "MesloLGS NF"
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.offset]
+x = 1
+y = 2
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Alt"
+
+[window]
+decorations = "full"
+dynamic_padding = false
+
+[window.padding]
+x = 5
+y = 5
