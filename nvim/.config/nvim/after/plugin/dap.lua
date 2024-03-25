@@ -158,6 +158,10 @@ require("dapui").setup({
 require("nvim-dap-virtual-text").setup()
 -- let g:dap_virtual_text=v:true
 
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+})
+
 local keymap = vim.keymap.set
 local opts = { silent = true }
 keymap("n", "<F5>", ":lua require'dap'.continue()<CR>", opts)

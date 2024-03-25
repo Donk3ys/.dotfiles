@@ -23,8 +23,8 @@ return require'packer'.startup(function()
 
 	-- Debug
 	use 'leoluz/nvim-dap-go'
-	use 'mfussenegger/nvim-dap'
-	use 'rcarriga/nvim-dap-ui'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+  use 'folke/neodev.nvim' -- suggested for "rcarriga/nvim-dap-ui"
 	use 'theHamsta/nvim-dap-virtual-text'
 	use 'mxsdev/nvim-dap-vscode-js'
 	use {
