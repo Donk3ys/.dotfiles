@@ -76,7 +76,7 @@ require"fidget".setup{
 require"gitsigns".setup() 
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
-require('illuminate').configure({
+require('illuminate').configure{
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
         -- 'lsp',
@@ -88,4 +88,4 @@ require('illuminate').configure({
     -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
     filetypes_denylist = {},
     under_cursor = true,
-})
+}
