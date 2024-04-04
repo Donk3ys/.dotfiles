@@ -10,7 +10,7 @@ export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Dotnet
-export PATH="$PATH":"/home/donk3y/.dotnet/tools"
+export PATH="$PATH":"~/.dotnet/tools"
 
 # Flutter /Users/donk3y/development/flutter/bin
 export PATH="$HOME/flutter/bin:$PATH"
