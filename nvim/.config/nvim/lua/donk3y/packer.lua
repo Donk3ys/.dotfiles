@@ -64,10 +64,9 @@ return require'packer'.startup(function()
 	use 'akinsho/toggleterm.nvim'
 
 	-- Tree Sitter
- 	 use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
 	---- UI
-	use "soulis-1256/eagle.nvim"
 	use "lukas-reineke/indent-blankline.nvim"
 	use 'sainnhe/gruvbox-material'
 	use 'kyazdani42/nvim-web-devicons'

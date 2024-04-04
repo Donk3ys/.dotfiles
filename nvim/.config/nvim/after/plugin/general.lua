@@ -89,6 +89,3 @@ require('illuminate').configure{
     filetypes_denylist = {},
     under_cursor = true,
 }
-
-require"eagle".setup{}
-vim.o.mousemoveevent = true
