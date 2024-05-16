@@ -89,3 +89,6 @@ require('illuminate').configure{
     filetypes_denylist = {},
     under_cursor = true,
 }
+
+require("oil").setup()
+vim.keymap.set("n", "<leader>fe", ":Oil --float <CR>", { desc = "Open parent directory" })

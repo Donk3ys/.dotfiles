@@ -37,7 +37,7 @@ return require'packer'.startup(function()
 	use 'nvim-telescope/telescope.nvim'
 	-- use 'nvim-telescope/telescope.nvim', { 'commit': '2b8c7b1ec7a3b27f1d24478c404ce4b2a82cc055' }
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-	use 'nvim-telescope/telescope-file-browser.nvim'
+  use("stevearc/oil.nvim")
 
 	-- Folds
 	use 'kevinhwang91/nvim-ufo'
@@ -76,4 +76,10 @@ return require'packer'.startup(function()
   use {'j-hui/fidget.nvim', tag = 'legacy' }
 	use 'RRethy/vim-illuminate'
 	use 'rcarriga/nvim-notify'
+  use {
+    'fei6409/log-highlight.nvim',
+    config = function()
+        require('log-highlight').setup {}
+    end
+  }
 end)

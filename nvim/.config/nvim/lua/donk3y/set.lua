@@ -13,6 +13,16 @@ set.expandtab=true
 set.tabstop=2           		-- Insert 2 spaces for a tab
 set.softtabstop=2
 set.shiftwidth=2        		-- Change the number of space characters inserted for indentation
+
+-- autocmd FileType cs setlocal shiftwidth=4
+-- vim.cmd('autocmd FileType cs setlocal shiftwidth=4')
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "cs",
+	command = "setlocal shiftwidth=4 tabstop=4"
+})
+
+
 set.smarttab=true           -- Makes tabbing smarter will realize you have 2 vs 4
 set.smartindent=true        -- Makes indenting smart
 set.smartcase=true					-- Case sensitive search

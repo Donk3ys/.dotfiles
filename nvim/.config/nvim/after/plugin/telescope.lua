@@ -2,7 +2,6 @@
 local keymap = vim.keymap.set
 local opts = { silent = true }
 keymap("n", "<leader>fd", "<cmd>Telescope diagnostics<CR>", opts)
-keymap("n", "<leader>fe", "<cmd>Telescope file_browser<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
@@ -31,5 +30,3 @@ require('telescope').setup{
 }
 require('telescope').load_extension "fzf"
 require("telescope").load_extension "flutter"
-require("telescope").load_extension "file_browser"
-local fb_actions = require "telescope".extensions.file_browser.actions
