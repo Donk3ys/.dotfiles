@@ -69,14 +69,16 @@ require"scrollbar".setup({
 -- vim.notify = require("notify")
 
 require"fidget".setup{
-	text = {
-			spinner = "dots_snake",
-		},
+    progress = {
+        display = {
+          progress_icon = { pattern = "dots_snake", period = 1 },
+        },
+    },
 }
 require"gitsigns".setup() 
 vim.keymap.set("n", "<leader>gg", ":LazyGit<CR>", { silent = true })
 
-require('illuminate').configure{
+require'illuminate'.configure{
     -- providers: provider used to get references in the buffer, ordered by priority
     providers = {
         -- 'lsp',
@@ -90,5 +92,17 @@ require('illuminate').configure{
     under_cursor = true,
 }
 
-require("oil").setup()
+require"oil".setup()
 vim.keymap.set("n", "<leader>fe", ":Oil --float <CR>", { desc = "Open parent directory" })
+
+require'log-highlight'.setup {}
+
+require'nvim-highlight-colors'.setup({
+  render = 'virtual',
+  virtual_symbol = '■',
+})
+
+require'nvim-highlight-colors'.setup({
+  render = 'virtual',
+  virtual_symbol = '■',
+})
