@@ -72,14 +72,10 @@ return require'packer'.startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'NTBBloodbath/galaxyline.nvim'
 	use 'petertriho/nvim-scrollbar'
-	-- use 'j-hui/fidget.nvim'
-  use {'j-hui/fidget.nvim', tag = 'legacy' }
+	use 'j-hui/fidget.nvim'
 	use 'RRethy/vim-illuminate'
 	use 'rcarriga/nvim-notify'
-  use {
-    'fei6409/log-highlight.nvim',
-    config = function()
-        require('log-highlight').setup {}
-    end
-  }
+  use 'fei6409/log-highlight.nvim'
+  use 'brenoprata10/nvim-highlight-colors'
 end)
+
