@@ -1,3 +1,5 @@
+export PATH="$HOME/.local/bin:$PATH"
+
 # Android sdk
 #export ANDROID_HOME="$HOME/Library/Android/sdk" # MacOS
 export ANDROID_HOME="$HOME/Android/Sdk" # linux
@@ -27,6 +29,9 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # eval "$(pyenv init --path)"
 # ### points python to pyenv installed python version
 # eval "$(pyenv init -)"
+
+# # poetry
+# alias poetry="~/.local/bin/poetry"
 
 # Rust
 . "$HOME/.cargo/env"
