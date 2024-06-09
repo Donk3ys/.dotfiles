@@ -9,18 +9,6 @@ require"toggleterm".setup{
 	size = 30,
 }
 
-require"Comment".setup()
-local ft = require('Comment.ft')
-ft.dart = {'//%s', '/*%s*/'}
---Comment context
-require('ts_context_commentstring').setup {} 
-vim.g.skip_ts_context_commentstring_module = true
--- require"nvim-treesitter.configs".setup {
--- 	context_commentstring = {
--- 		enable = true
--- 	}
--- }
-
 local highlight = {
     "LightGray",
 }

@@ -7,8 +7,6 @@ return require'packer'.startup(function()
 	use 'romgrk/barbar.nvim'
 
 	-- Comments
-	use 'numToStr/Comment.nvim'
-	use 'JoosepAlviste/nvim-ts-context-commentstring'
 	use 'folke/todo-comments.nvim'
 
 	-- Auto Complete
