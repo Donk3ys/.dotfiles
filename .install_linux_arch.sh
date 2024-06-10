@@ -10,42 +10,24 @@ cd ~
 # Updated repos
 sudo pacman -Syyu
 
-# Setup keyboard lights for rog strix laptop
-VERSION=1.5
-curl -LOs https://github.com/wroberts/rogauracore/releases/download/$VERSION/rogauracore-$VERSION.tar.gz
-tar xf rogauracore-$VERSION.tar.gz
-cd rogauracore-$VERSION/
-./configure
-make
-sudo make install
-rogauracore initialize_keyboard
-rogauracore red
-rogauracore brightness 1
-# add start bash script to /etc/profile.d/ folder
-	# !/bin/bash
-echo '
-rogauracore red
-rogauracore brightness 1
-Set mouse sensitivity
-xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matrix" 0.3 0 0 0 0.3 0 0 0 1
-' | sudo tee -a /etc/profile
-# install light for screen brightness
-sudo pacman -S light
-sudo usermod -a G video $USER
-# Must reboot to take effect
-
 # Install git & stow then clone .dotfiles & stow files
 sudo pacman -S git stow --noconfirm
-# git clone https://github.com/Donk3ys/.dotfiles.git ~/.dotfiles
+git clone https://github.com/Donk3ys/.dotfiles.git ~/.dotfiles
 cd ~/.dotfiles/
 stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go yay flameshot copyq xclip blueman --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go npm pnpm docker docker-compose vlc --noconfirm
+yay -S nvm android-studio postman-bin google-chrome nvim-packer-git dbeaver mongodb-compass --noconfirm
+
+# Add user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 # Install node version manager
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 nvm install --lts
 nvm alias default node
 
@@ -58,55 +40,20 @@ git clone https://github.com/tmux-plugins/tmux-resurrect ~/.dotfiles/tmux/.confi
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 cp ~/.dotfiles/zsh/.config/zsh/themes/powerlevel10k.zsh-theme ~/.powerlevel10k
 
-# Copy .zprofile to .zshrc as .zprofile not getting called
-cp .zprofile .zshrc
-source .zprofile
-
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/plugins/zsh-syntax-highlighting
 #wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/last-working-dir/last-working-dir.plugin.zsh ~/.config/zsh/plugins
 
-# Logout and back in to load .zprofile
-# chsh -l
-chsh -s /bin/zsh
-#homectl update --shell=/bin/zsh
-
-# Install "Packer" plugin manager for neovim
-yay -S nvim-packer-git --noconfirm
-
-# Install lsp servers for nvim lsp-config
-sudo npm install -g bash-language-server diagnostic-languageserver solidity-language-server typescript typescript-language-server
+# Copy .zprofile to .zshrc as .zprofile not getting called
+cp .zprofile .zshrc
+source .zprofile
 
 # Install flutter
-# mkdir ~/development
-# git clone https://github.com/flutter/flutter.git -b stable ~/development/flutter
-# flutter precache
-# flutter doctor --android-licenses
-
-# Get android studio setup for sdk
-# Install JDK
-# sudo pacman -S jdk-openjdk --noconfirm
-
-# Download & install Android Studio
-# # sudo dpkg --add-architecture i386
-# # sudo pacman -S libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386 --noconfirm
-# wget "https://dl.google.com/dl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz" -P ~/Downloads
-# sudo tar -xvzf ~/Downloads/android-studio-2021.1.1.22-linux.tar.gz -C /opt/
-# # Change ownership of android studio to current user group
-# sudo chown -R donk3y /opt/android-studio/
-## mkdir -p "$HOME"/.local/share/applications
-## cat > "$HOME"/.local/share/applications/android-studio.desktop <<-EOF
-## 	[Desktop Entry]
-## 	Version=2020.3.1.25
-## 	Type=Application
-## 	Name=Android Studio
-## 	Exec="/opt/android-studio/bin/studio.sh" %f
-## 	Icon=/opt/android-studio/bin/studio.png
-## 	Categories=Development;IDE;
-## 	Terminal=false
-## 	StartupNotify=true
-## 	StartupWMClass=android-studio
-## EOF
+git clone https://github.com/flutter/flutter.git -b stable ~/flutter
+flutter precache
+flutter doctor --android-licenses
+# Add flutter / Dart extensions to android studio
+# Add flutter folder path to android studio and select/add command line tools from android sdk manager
 
 #Install nerd-fonts
 # download from website nerdfonts.com
@@ -120,7 +67,15 @@ sudo rm Meslo.zip
 fc-cache -vf
 fc-match Meslo -a
 
+# Logout and back in to load .zprofile
+# chsh -l
+chsh -s /bin/zsh
+#homectl update --shell=/bin/zsh
+
 echo "Installing Finished"
+
+# # Install lsp servers for nvim lsp-config
+# sudo npm install -g bash-language-server diagnostic-languageserver solidity-language-server typescript typescript-language-server
 
 #Reboot Machine
 
@@ -131,3 +86,27 @@ echo "Installing Finished"
 # 2. open extra sdk options and install command line tools
 # 3. run flutter doctor
 # 4. run flutter doctor --android-licenses
+#
+# Setup keyboard lights for rog strix laptop
+# VERSION=1.5
+# curl -LOs https://github.com/wroberts/rogauracore/releases/download/$VERSION/rogauracore-$VERSION.tar.gz
+# tar xf rogauracore-$VERSION.tar.gz
+# cd rogauracore-$VERSION/
+# ./configure
+# make
+# sudo make install
+# rogauracore initialize_keyboard
+# rogauracore red
+# rogauracore brightness 1
+# # add start bash script to /etc/profile.d/ folder
+# 	# !/bin/bash
+# echo '
+# rogauracore red
+# rogauracore brightness 1
+# Set mouse sensitivity
+# xinput set-prop “Logitech Gaming Mouse G502” "Coordinate Transformation Matrix" 0.3 0 0 0 0.3 0 0 0 1
+# ' | sudo tee -a /etc/profile
+# # install light for screen brightness
+# sudo pacman -S light
+# sudo usermod -a G video $USER
+# # Must reboot to take effect

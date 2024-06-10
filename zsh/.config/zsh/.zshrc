@@ -8,9 +8,6 @@ export PATH="$PATH/:$ANDROID_HOME/platform-tools"
 # Chrome Linux
 export CHROME_EXECUTABLE="/usr/bin/google-chrome-stable"
 
-# Dart
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-
 # Dotnet
 export PATH="$PATH":"~/.dotnet/tools"
 
@@ -33,8 +30,8 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # # poetry
 # alias poetry="~/.local/bin/poetry"
 
-# Rust
-. "$HOME/.cargo/env"
+# # Rust
+# . "$HOME/.cargo/env"
 
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
@@ -103,9 +100,11 @@ export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME --type f --hidden --follow --exclude .git"
 
+# Source Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+source /usr/share/nvm/init-nvm.sh
 
 # Add flatpak images to bin
 if [ -d "/var/lib/flatpak/exports/bin/" ] ;
