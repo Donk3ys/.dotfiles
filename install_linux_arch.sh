@@ -22,6 +22,8 @@ sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go npm p
 yay -S nvm android-studio postman-bin google-chrome nvim-packer-git dbeaver mongodb-compass --noconfirm
 
 # Add user to docker group
+sudo systemctl start docker.service
+sudo systemctl enable docker.service
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
