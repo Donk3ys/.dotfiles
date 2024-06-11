@@ -18,7 +18,7 @@ stow -vSt ~ alacritty nvim zsh tmux i3
 cd ~
 
 # Install packages
-sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go npm pnpm docker docker-compose vlc --noconfirm
+sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go npm pnpm docker docker-compose docker-buildx vlc --noconfirm
 yay -S nvm android-studio postman-bin google-chrome nvim-packer-git dbeaver mongodb-compass --noconfirm
 
 # Add user to docker group
