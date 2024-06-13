@@ -46,9 +46,6 @@ return require'packer'.startup(function()
 	use 'kdheepak/lazygit.nvim'
 	use 'sindrets/diffview.nvim'
 
-	-- Linters
-	use 'jose-elias-alvarez/null-ls.nvim'	
-
 	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'

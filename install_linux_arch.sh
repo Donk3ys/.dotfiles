@@ -19,7 +19,7 @@ cd ~
 
 # Install packages
 sudo pacman -S zsh zsh-completions tmux neovim fzf fd ripgrep alacritty go npm pnpm docker docker-compose docker-buildx vlc --noconfirm
-yay -S nvm android-studio postman-bin google-chrome nvim-packer-git dbeaver mongodb-compass --noconfirm
+yay -S nvm android-studio postman-bin google-chrome nvim-packer-git dbeaver mongodb-compass gnome-shell-extension-pano --noconfirm
 
 # Add user to docker group
 sudo systemctl start docker.service
@@ -57,9 +57,19 @@ flutter doctor --android-licenses
 # Add flutter / Dart extensions to android studio
 # Add flutter folder path to android studio and select/add command line tools from android sdk manager
 
+
+
+# Logout and back in to load .zprofile
+# chsh -l
+chsh -s /bin/zsh
+#homectl update --shell=/bin/zsh
+
+echo "Installing Finished"
+
 #Install nerd-fonts
-# download from website nerdfonts.com
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip -P ~/Downloads
+# https://www.nerdfonts.com/font-downloads
+# Find latest release version https://github.com/ryanoasis/nerd-fonts/releases
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip -P ~/Downloads
 cd /usr/share/fonts/
 sudo mkdir nerd-fonts
 cd nerd-fonts
@@ -69,12 +79,6 @@ sudo rm Meslo.zip
 fc-cache -vf
 fc-match Meslo -a
 
-# Logout and back in to load .zprofile
-# chsh -l
-chsh -s /bin/zsh
-#homectl update --shell=/bin/zsh
-
-echo "Installing Finished"
 
 # # Install lsp servers for nvim lsp-config
 # sudo npm install -g bash-language-server diagnostic-languageserver solidity-language-server typescript typescript-language-server
