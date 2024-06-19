@@ -33,6 +33,10 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # # Rust
 # . "$HOME/.cargo/env"
 
+# Set nvim as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 ENABLE_CORRECTION="true"
 ZSH_DISABLE_COMPFIX=true
 
