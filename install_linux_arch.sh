@@ -31,7 +31,8 @@ newgrp docker
 # Install node version manager
 # curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 nvm install --lts
-nvm alias default node
+nvm use lts/\*
+# nvm alias default node
 
 # Add tmux packages
 mkdir ~/.dotfiles/tmux/.config/tmux/plugins
