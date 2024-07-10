@@ -32,7 +32,7 @@ local buffer_not_empty = function()
 end
 
 section.left[1] = {
-  FirsElement = {
+  FirstElement = {
     -- provider = function() return '▊ ' end,
     provider = function()
       return "  "
@@ -89,6 +89,16 @@ section.left[4] = {
     provider = "FileIcon",
     condition = buffer_not_empty,
     highlight = {require("galaxyline.providers.fileinfo").get_file_icon_color, nord_colors.line_bg}
+  }
+}
+
+local navic = require('nvim-navic')
+section.left[5] = {
+  BCElement = {
+    provider = function()
+      return navic.get_location()
+    end,
+    highlight = {nord_colors.blue, nord_colors.line_bg}
   }
 }
 section.right[2] = {

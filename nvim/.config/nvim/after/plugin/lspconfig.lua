@@ -1,5 +1,6 @@
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
+local navic = require("nvim-navic")
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -30,6 +31,8 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.api.nvim_command [[augroup END]]
   end
+
+  navic.attach(client, bufnr)
 end
 
 

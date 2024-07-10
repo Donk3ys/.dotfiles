@@ -72,5 +72,9 @@ return require'packer'.startup(function()
 	use 'rcarriga/nvim-notify'
   use 'fei6409/log-highlight.nvim'
   use 'brenoprata10/nvim-highlight-colors'
+  use {
+    "SmiteshP/nvim-navic",
+    requires = "neovim/nvim-lspconfig"
+}
 end)
 
