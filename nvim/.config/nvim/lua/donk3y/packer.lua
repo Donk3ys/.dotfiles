@@ -9,6 +9,9 @@ return require'packer'.startup(function()
 	-- Comments
 	use 'folke/todo-comments.nvim'
 
+  -- AI
+  use("olimorris/codecompanion.nvim")
+
 	-- Auto Complete
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
