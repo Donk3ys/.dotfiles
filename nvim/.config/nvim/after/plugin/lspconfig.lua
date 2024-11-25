@@ -70,6 +70,10 @@ require'flutter-tools'.setup {
 	-- -- },
 }
 
+require'lspconfig'.gleam.setup{
+	on_attach = on_attach,
+}
+
 require'lspconfig'.gopls.setup{
   on_attach = on_attach,
   hint = {enabled = true},

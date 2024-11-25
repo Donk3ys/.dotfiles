@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
 		"c_sharp",
 		"dart",
 		"dockerfile",
+    "gleam",
 		"go",
     "html",
     "javascript",
