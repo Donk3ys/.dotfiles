@@ -49,6 +49,9 @@ return require'packer'.startup(function()
 	use 'kdheepak/lazygit.nvim'
 	use 'sindrets/diffview.nvim'
 
+  -- Generator
+  use { 'wa11breaker/dart-data-class-generator.nvim', requires = {"nvimtools/none-ls.nvim"} }
+
 	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'
@@ -68,8 +71,12 @@ return require'packer'.startup(function()
 	use "lukas-reineke/indent-blankline.nvim"
 	use 'sainnhe/gruvbox-material'
 	use 'kyazdani42/nvim-web-devicons'
-	use 'NTBBloodbath/galaxyline.nvim'
-	use 'petertriho/nvim-scrollbar'
+	-- use 'NTBBloodbath/galaxyline.nvim'
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+}
+  use 'petertriho/nvim-scrollbar'
 	use 'j-hui/fidget.nvim'
 	use 'RRethy/vim-illuminate'
 	use 'rcarriga/nvim-notify'

@@ -5,8 +5,15 @@
 require"todo-comments".setup {}
 
 require"toggleterm".setup{
+  direction = 'vertical',
+  size = function(term)
+    if term.direction == "horizontal" then
+      return 30
+    elseif term.direction == "vertical" then
+      return 100
+    end
+  end,
 	open_mapping = [[<c-\>]],
-	size = 30,
 }
 
 local highlight = {
@@ -89,3 +96,5 @@ require'nvim-highlight-colors'.setup({
   render = 'virtual',
   virtual_symbol = '■',
 })
+
+require("dart-data-class-generator").setup({})
