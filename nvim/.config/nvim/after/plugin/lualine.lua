@@ -7,14 +7,9 @@ local lualine = require('lualine')
 -- stylua: ignore
 local colors = {
   bg = "NONE",
-  -- bg = "#2E3440",
   fg = "#81A1C1",
-  line_bg = "NONE",
-  lbg = "NONE",
-  -- lbg = "#3B4252",
   yellow = "#d8a657",
   cyan = "#89b482",
-  darkblue = "#81A1C1",
   green = "#a9b665",
   orange = "#e78a4e",
   violet = "#B48EAD",
@@ -141,7 +136,7 @@ ins_left {
   diagnostics_color = {
     error = { fg = colors.red },
     warn = { fg = colors.yellow },
-    info = { fg = colors.cyan },
+    info = { fg = colors.blue },
   },
 }
 

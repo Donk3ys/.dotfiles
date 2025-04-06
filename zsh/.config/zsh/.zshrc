@@ -31,7 +31,7 @@ export PATH="$PATH:$(go env GOPATH)/bin"
 # alias poetry="~/.local/bin/poetry"
 
 # # Rust
-# . "$HOME/.cargo/env"
+. "$HOME/.cargo/env"
 
 # Set nvim as default editor
 export VISUAL=nvim
@@ -75,6 +75,7 @@ alias studio="/opt/android-studio/bin/studio.sh" # ubuntu android studio
 alias pub="flutter pub"
 alias pubo="flutter pub outdated"
 alias pubu="flutter pub upgrade"
+alias dbr="dart run build_runner build"
 
 alias zshrc="~/.dotfiles/zsh/.config/zsh/.zshrc"
 alias vimi="~/.dotfiles/nvim/.config/nvim/"
@@ -117,3 +118,6 @@ fi
 
 # Start Tmux and restore last save session
 #tmux a; xdotool key ctrl+a ctrl-r
+autoload bashcompinit
+bashcompinit
+source "/home/donk3y/.local/share/bash-completion/completions/am"
