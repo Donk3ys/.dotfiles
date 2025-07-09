@@ -32,7 +32,10 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   -- end
 
-  navic.attach(client, bufnr)
+    -- Attach navic unless the client is Tailwind CSS
+  if client.name ~= "tailwindcss" then
+    navic.attach(client, bufnr)
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -90,6 +93,16 @@ require'lspconfig'.solidity_ls.setup{
 
 require'lspconfig'.svelte.setup{
 	on_attach = on_attach,
+}
+
+require("tailwind-tools").setup({
+  document_color = {
+    enabled = false,
+  },
+})
+require'lspconfig'.tailwindcss.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
 require'lspconfig'.ts_ls.setup{

@@ -52,6 +52,16 @@ return require'packer'.startup(function()
 	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'
+	-- use 'mrcjkb/rustaceanvim'
+  use {
+    "luckasRanarison/tailwind-tools.nvim",
+    run = ":UpdateRemotePlugins",
+    requires = {
+      "nvim-treesitter/nvim-treesitter",
+      { "nvim-telescope/telescope.nvim", opt = true },
+      { "neovim/nvim-lspconfig", opt = true },
+    },
+  } 
 
 	-- Mason
 	use "williamboman/mason.nvim"
