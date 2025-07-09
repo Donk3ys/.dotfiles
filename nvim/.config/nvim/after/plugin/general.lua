@@ -1,7 +1,4 @@
 -- Plugin Setup
--- require"mason".setup()
--- require"mason-lspconfig".setup()
-
 require"todo-comments".setup {}
 
 require"toggleterm".setup{

@@ -5,7 +5,7 @@ require'donk3y.packer'
 
 -- -- Plugin Mason Setup
 require"mason".setup()
-require"mason-lspconfig".setup()
+-- require"mason-lspconfig".setup()
 
 -- colorscheme
 vim.cmd('colorscheme gruvbox-material')
