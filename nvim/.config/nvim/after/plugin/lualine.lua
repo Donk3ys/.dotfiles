@@ -1,6 +1,4 @@
--- Eviline config for lualine
--- Author: shadmansaleh
--- Credit: glepnir
+local navic = require("nvim-navic")
 local lualine = require('lualine')
 
 -- Color table for highlights
@@ -138,6 +136,16 @@ ins_left {
     warn = { fg = colors.yellow },
     info = { fg = colors.blue },
   },
+}
+
+ins_left {
+  function()
+    return navic.get_location()
+  end,
+  cond = function()
+    return navic.is_available()
+  end,
+  color = { fg = colors.gray },
 }
 
 -- Insert mid section. You can make any number of sections in neovim :)
