@@ -79,12 +79,6 @@ require'lspconfig'.gopls.setup{
   hint = {enabled = true},
 }
 
-require'rust-tools'.setup{
-  server = {
-    on_attach = on_attach,
-  },
-}
-
 require'lspconfig'.solidity_ls.setup{
   on_attach = on_attach,
   -- cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
@@ -102,12 +96,6 @@ require'lspconfig'.ts_ls.setup{
 	on_attach = on_attach,
 }
 
-
-require'rust-tools'.setup{
-  server = {
-    on_attach = on_attach,
-  },
-}
 require'lspconfig'.yamlls.setup {
 	on_attach = on_attach,
   capabilities = capabilities,

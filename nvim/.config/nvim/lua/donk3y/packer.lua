@@ -9,9 +9,6 @@ return require'packer'.startup(function()
 	-- Comments
 	use 'folke/todo-comments.nvim'
 
-  -- AI
-  use("olimorris/codecompanion.nvim")
-
 	-- Auto Complete
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
@@ -55,7 +52,6 @@ return require'packer'.startup(function()
 	-- Lsp
 	use 'neovim/nvim-lspconfig'
 	use 'akinsho/flutter-tools.nvim'
-	use 'simrat39/rust-tools.nvim'
 
 	-- Mason
 	use "williamboman/mason.nvim"
@@ -71,7 +67,6 @@ return require'packer'.startup(function()
 	use "lukas-reineke/indent-blankline.nvim"
 	use 'sainnhe/gruvbox-material'
 	use 'kyazdani42/nvim-web-devicons'
-	-- use 'NTBBloodbath/galaxyline.nvim'
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'nvim-tree/nvim-web-devicons', opt = true }
