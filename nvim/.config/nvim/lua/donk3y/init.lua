@@ -1,7 +1,7 @@
 -- My Settings Setup
 require'donk3y.set'
 require'donk3y.map'
-require'donk3y.packer'
+require'donk3y.lazy'
 
 -- -- Plugin Mason Setup
 require"mason".setup()
