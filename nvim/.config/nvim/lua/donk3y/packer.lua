@@ -91,5 +91,8 @@ return require'packer'.startup(function()
     "SmiteshP/nvim-navic",
     requires = "neovim/nvim-lspconfig"
 }
+
+  -- Other
+  use 'grafana/vim-alloy'
 end)
 
